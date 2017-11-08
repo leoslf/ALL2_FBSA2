@@ -1,0 +1,410 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>FSBA2.utils package &#8212; FSBA2  documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FSBA2  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="fsba2-utils-package">
+<h1>FSBA2.utils package<a class="headerlink" href="#fsba2-utils-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="FSBA2.utils.searching.html">FSBA2.utils.searching package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="FSBA2.utils.searching.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FSBA2.utils.searching.html#module-FSBA2.utils.searching.binarysearch">FSBA2.utils.searching.binarysearch module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FSBA2.utils.searching.html#module-FSBA2.utils.searching.linearsearch">FSBA2.utils.searching.linearsearch module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FSBA2.utils.searching.html#module-FSBA2.utils.searching">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="FSBA2.utils.sorting.html">FSBA2.utils.sorting package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="FSBA2.utils.sorting.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FSBA2.utils.sorting.html#module-FSBA2.utils.sorting.bubblesort">FSBA2.utils.sorting.bubblesort module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FSBA2.utils.sorting.html#module-FSBA2.utils.sorting.insertionsort">FSBA2.utils.sorting.insertionsort module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FSBA2.utils.sorting.html#module-FSBA2.utils.sorting.mergesort">FSBA2.utils.sorting.mergesort module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FSBA2.utils.sorting.html#module-FSBA2.utils.sorting.quicksort">FSBA2.utils.sorting.quicksort module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FSBA2.utils.sorting.html#module-FSBA2.utils.sorting.selectionsort">FSBA2.utils.sorting.selectionsort module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FSBA2.utils.sorting.html#module-FSBA2.utils.sorting">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-FSBA2.utils.GUI">
+<span id="fsba2-utils-gui-module"></span><h2>FSBA2.utils.GUI module<a class="headerlink" href="#module-FSBA2.utils.GUI" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="FSBA2.utils.GUI.GUI">
+<em class="property">class </em><code class="descclassname">FSBA2.utils.GUI.</code><code class="descname">GUI</code><span class="sig-paren">(</span><em>title='GUI'</em>, <em>mode=&lt;GUIMode.normal: 0&gt;</em>, <em>login=False</em><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.GUI.GUI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">tkinter.Frame</span></code></p>
+<p>Wrapper of Tkinter</p>
+<dl class="class">
+<dt id="FSBA2.utils.GUI.GUI.GradientCanvas">
+<em class="property">class </em><code class="descname">GradientCanvas</code><span class="sig-paren">(</span><em>root</em>, <em>color1</em>, <em>color2</em>, <em>borderwidth=0</em>, <em>relief='sunken'</em><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.GUI.GUI.GradientCanvas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">tkinter.Canvas</span></code></p>
+<dl class="method">
+<dt id="FSBA2.utils.GUI.GUI.GradientCanvas.draw_gradient">
+<code class="descname">draw_gradient</code><span class="sig-paren">(</span><em>event=None</em><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.GUI.GUI.GradientCanvas.draw_gradient" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>event</strong> (<em>event</em>) – (inherited)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="FSBA2.utils.GUI.GUI.centerWindow">
+<code class="descname">centerWindow</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.GUI.GUI.centerWindow" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="FSBA2.utils.GUI.GUI.checkLogin">
+<code class="descname">checkLogin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.GUI.GUI.checkLogin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether the combination of username and input is valid for login</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="FSBA2.utils.GUI.GUI.initialize">
+<code class="descname">initialize</code><span class="sig-paren">(</span><em>title</em><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.GUI.GUI.initialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>GUI initialization</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="FSBA2.utils.GUI.GUI.loginModeSpecific_init">
+<code class="descname">loginModeSpecific_init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.GUI.GUI.loginModeSpecific_init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="FSBA2.utils.GUI.GUI.mainUI">
+<code class="descname">mainUI</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.GUI.GUI.mainUI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="FSBA2.utils.GUI.GUI.maximize">
+<code class="descname">maximize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.GUI.GUI.maximize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="FSBA2.utils.GUI.GUI.moveToTop">
+<code class="descname">moveToTop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.GUI.GUI.moveToTop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="FSBA2.utils.GUI.GUI.terminate">
+<code class="descname">terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.GUI.GUI.terminate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="FSBA2.utils.GUI.GUIMode">
+<em class="property">class </em><code class="descclassname">FSBA2.utils.GUI.</code><code class="descname">GUIMode</code><a class="headerlink" href="#FSBA2.utils.GUI.GUIMode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.6/library/enum.html#enum.Enum" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">enum.Enum</span></code></a></p>
+<p>An enumeration.</p>
+<dl class="attribute">
+<dt id="FSBA2.utils.GUI.GUIMode.login">
+<code class="descname">login</code><em class="property"> = 1</em><a class="headerlink" href="#FSBA2.utils.GUI.GUIMode.login" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="FSBA2.utils.GUI.GUIMode.normal">
+<code class="descname">normal</code><em class="property"> = 0</em><a class="headerlink" href="#FSBA2.utils.GUI.GUIMode.normal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-FSBA2.utils.comparator">
+<span id="fsba2-utils-comparator-module"></span><h2>FSBA2.utils.comparator module<a class="headerlink" href="#module-FSBA2.utils.comparator" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="FSBA2.utils.comparator.default_cmp">
+<code class="descclassname">FSBA2.utils.comparator.</code><code class="descname">default_cmp</code><span class="sig-paren">(</span><em>a</em>, <em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.comparator.default_cmp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-FSBA2.utils.debug">
+<span id="fsba2-utils-debug-module"></span><h2>FSBA2.utils.debug module<a class="headerlink" href="#module-FSBA2.utils.debug" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="FSBA2.utils.debug.debug_outer_stack_frame">
+<code class="descclassname">FSBA2.utils.debug.</code><code class="descname">debug_outer_stack_frame</code><span class="sig-paren">(</span><em>context=1</em><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.debug.debug_outer_stack_frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get information from outer stack frame</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>context</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – number of stackframe to be queried</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="FSBA2.utils.debug.get_src_line">
+<code class="descclassname">FSBA2.utils.debug.</code><code class="descname">get_src_line</code><span class="sig-paren">(</span><em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.debug.get_src_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Getting the source line from stack frame</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-FSBA2.utils.list_view">
+<span id="fsba2-utils-list-view-module"></span><h2>FSBA2.utils.list_view module<a class="headerlink" href="#module-FSBA2.utils.list_view" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="FSBA2.utils.list_view.ListView">
+<em class="property">class </em><code class="descclassname">FSBA2.utils.list_view.</code><code class="descname">ListView</code><span class="sig-paren">(</span><em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.list_view.ListView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">tkinter.ttk.Frame</span></code></p>
+<p>ListView extends tkinter.Frame</p>
+<dl class="class">
+<dt id="FSBA2.utils.list_view.ListView.Table">
+<em class="property">class </em><code class="descname">Table</code><span class="sig-paren">(</span><em>parent</em>, <em>result_set</em><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.list_view.ListView.Table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.6/library/tkinter.ttk.html#tkinter.ttk.Treeview" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">tkinter.ttk.Treeview</span></code></a></p>
+<dl class="method">
+<dt id="FSBA2.utils.list_view.ListView.Table.comparator">
+<code class="descname">comparator</code><span class="sig-paren">(</span><em>col</em>, <em>a</em>, <em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.list_view.ListView.Table.comparator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="FSBA2.utils.list_view.ListView.Table.config_columns">
+<code class="descname">config_columns</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.list_view.ListView.Table.config_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="FSBA2.utils.list_view.ListView.Table.init_rows">
+<code class="descname">init_rows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.list_view.ListView.Table.init_rows" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="FSBA2.utils.list_view.ListView.Table.sortTable">
+<code class="descname">sortTable</code><span class="sig-paren">(</span><em>columnNo</em><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.list_view.ListView.Table.sortTable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="FSBA2.utils.list_view.ListView.Table.update_filter">
+<code class="descname">update_filter</code><span class="sig-paren">(</span><em>txt</em><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.list_view.ListView.Table.update_filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="FSBA2.utils.list_view.ListView.Table.update_rows">
+<code class="descname">update_rows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.list_view.ListView.Table.update_rows" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="FSBA2.utils.list_view.ListView.filter_init">
+<code class="descname">filter_init</code><span class="sig-paren">(</span><em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.list_view.ListView.filter_init" title="Permalink to this definition">¶</a></dt>
+<dd><p>initialize the text field for filter</p>
+<dl class="docutils">
+<dt>param:</dt>
+<dd>callback (function(str)): function to be called when the content of the text field is modified</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="FSBA2.utils.list_view.ListView.handle_cb">
+<code class="descname">handle_cb</code><span class="sig-paren">(</span><em>f</em>, <em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.list_view.ListView.handle_cb" title="Permalink to this definition">¶</a></dt>
+<dd><p>callback handler for text field modification</p>
+<dl class="docutils">
+<dt>param:</dt>
+<dd>f (function(str)): function to be called when the content of the text field is modified
+v (tkinter.StringVar): textvariable that contains the content of the text field</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="FSBA2.utils.list_view.ListView.table_init">
+<code class="descname">table_init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.list_view.ListView.table_init" title="Permalink to this definition">¶</a></dt>
+<dd><p>initialize the table</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="FSBA2.utils.list_view.doNothing">
+<code class="descclassname">FSBA2.utils.list_view.</code><code class="descname">doNothing</code><span class="sig-paren">(</span><em>*argv</em><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.list_view.doNothing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="FSBA2.utils.list_view.getrandbits">
+<code class="descclassname">FSBA2.utils.list_view.</code><code class="descname">getrandbits</code><span class="sig-paren">(</span><em>k</em><span class="sig-paren">)</span> &#x2192; x.  Generates an int with k random bits.<a class="headerlink" href="#FSBA2.utils.list_view.getrandbits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="FSBA2.utils.list_view.random">
+<code class="descclassname">FSBA2.utils.list_view.</code><code class="descname">random</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; x in the interval [0, 1).<a class="headerlink" href="#FSBA2.utils.list_view.random" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-FSBA2.utils.odbc">
+<span id="fsba2-utils-odbc-module"></span><h2>FSBA2.utils.odbc module<a class="headerlink" href="#module-FSBA2.utils.odbc" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="FSBA2.utils.odbc.columnDesc">
+<code class="descclassname">FSBA2.utils.odbc.</code><code class="descname">columnDesc</code><span class="sig-paren">(</span><em>description</em><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.odbc.columnDesc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="FSBA2.utils.odbc.connectDB">
+<code class="descclassname">FSBA2.utils.odbc.</code><code class="descname">connectDB</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.odbc.connectDB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="FSBA2.utils.odbc.delete">
+<code class="descclassname">FSBA2.utils.odbc.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>table</em>, <em>condition=''</em><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.odbc.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="FSBA2.utils.odbc.insert">
+<code class="descclassname">FSBA2.utils.odbc.</code><code class="descname">insert</code><span class="sig-paren">(</span><em>table</em>, <em>columns=[]</em>, <em>values=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.odbc.insert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="FSBA2.utils.odbc.query">
+<code class="descclassname">FSBA2.utils.odbc.</code><code class="descname">query</code><span class="sig-paren">(</span><em>table</em>, <em>columns=''</em>, <em>condition=''</em>, <em>join=''</em><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.odbc.query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="FSBA2.utils.odbc.typeStr_and_justify">
+<code class="descclassname">FSBA2.utils.odbc.</code><code class="descname">typeStr_and_justify</code><span class="sig-paren">(</span><em>code</em><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.odbc.typeStr_and_justify" title="Permalink to this definition">¶</a></dt>
+<dd><p>DECIMAL = 0
+TINY = 1
+SHORT = 2
+LONG = 3
+FLOAT = 4
+DOUBLE = 5
+NULL = 6
+TIMESTAMP = 7
+LONGLONG = 8
+INT24 = 9
+DATE = 10
+TIME = 11
+DATETIME = 12
+YEAR = 13
+NEWDATE = 14
+VARCHAR = 15
+BIT = 16
+JSON = 245
+NEWDECIMAL = 246
+ENUM = 247
+SET = 248
+TINY_BLOB = 249
+MEDIUM_BLOB = 250
+LONG_BLOB = 251
+BLOB = 252
+VAR_STRING = 253
+STRING = 254
+GEOMETRY = 255</p>
+<p>CHAR = TINY
+INTERVAL = ENUM</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="FSBA2.utils.odbc.update">
+<code class="descclassname">FSBA2.utils.odbc.</code><code class="descname">update</code><span class="sig-paren">(</span><em>table</em>, <em>column_and_values=[]</em>, <em>condition=''</em><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.odbc.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-FSBA2.utils.table_utils">
+<span id="fsba2-utils-table-utils-module"></span><h2>FSBA2.utils.table_utils module<a class="headerlink" href="#module-FSBA2.utils.table_utils" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="FSBA2.utils.table_utils.max_col">
+<code class="descclassname">FSBA2.utils.table_utils.</code><code class="descname">max_col</code><span class="sig-paren">(</span><em>cols</em>, <em>rows</em><span class="sig-paren">)</span><a class="headerlink" href="#FSBA2.utils.table_utils.max_col" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-FSBA2.utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-FSBA2.utils" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="FSBA2.utils.getrandbits">
+<code class="descclassname">FSBA2.utils.</code><code class="descname">getrandbits</code><span class="sig-paren">(</span><em>k</em><span class="sig-paren">)</span> &#x2192; x.  Generates an int with k random bits.<a class="headerlink" href="#FSBA2.utils.getrandbits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="FSBA2.utils.random">
+<code class="descclassname">FSBA2.utils.</code><code class="descname">random</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; x in the interval [0, 1).<a class="headerlink" href="#FSBA2.utils.random" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FSBA2  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Group 7.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
+    </div>
+  </body>
+</html>

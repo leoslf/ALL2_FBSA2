@@ -1,0 +1,197 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>FSBA2.utils.searching package &#8212; FSBA2  documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FSBA2  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="fsba2-utils-searching-package">
+<h1>FSBA2.utils.searching package<a class="headerlink" href="#fsba2-utils-searching-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-FSBA2.utils.searching.binarysearch">
+<span id="fsba2-utils-searching-binarysearch-module"></span><h2>FSBA2.utils.searching.binarysearch module<a class="headerlink" href="#module-FSBA2.utils.searching.binarysearch" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="FSBA2.utils.searching.binarysearch.binarysearch">
+<code class="descclassname">FSBA2.utils.searching.binarysearch.</code><code class="descname">binarysearch</code><span class="sig-paren">(</span><em>l: list</em>, <em>value</em>, <em>f=None</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#FSBA2.utils.searching.binarysearch.binarysearch" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>l</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – list that may contain the value given</li>
+<li><strong>value</strong> – value to be searched</li>
+<li><strong>f</strong> (<em>f</em><em>(</em><em>a</em><em>, </em><em>b</em><em>) </em><em>-&gt; int</em>) – comparator function</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">the boolean value whether the result was found.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#bool" title="(in Python v3.6)">bool</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="FSBA2.utils.searching.binarysearch.binarysearch_pos">
+<code class="descclassname">FSBA2.utils.searching.binarysearch.</code><code class="descname">binarysearch_pos</code><span class="sig-paren">(</span><em>l: list</em>, <em>value</em>, <em>f=None</em>, <em>lo: int = 0</em>, <em>hi: int = None</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#FSBA2.utils.searching.binarysearch.binarysearch_pos" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>l</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – list that may contains the value given</li>
+<li><strong>value</strong> – value to be searched</li>
+<li><strong>f</strong> (<em>f</em><em>(</em><em>a</em><em>, </em><em>b</em><em>) </em><em>-&gt; int</em>) – comparator function</li>
+<li><strong>lo</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – lower bound of sub-list</li>
+<li><strong>hi</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – upper bound of sub-list, inclusive</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The position / index if value was found, returning -1 otherwise.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)">int</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-FSBA2.utils.searching.linearsearch">
+<span id="fsba2-utils-searching-linearsearch-module"></span><h2>FSBA2.utils.searching.linearsearch module<a class="headerlink" href="#module-FSBA2.utils.searching.linearsearch" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="FSBA2.utils.searching.linearsearch.linearsearch">
+<code class="descclassname">FSBA2.utils.searching.linearsearch.</code><code class="descname">linearsearch</code><span class="sig-paren">(</span><em>l: list</em>, <em>value</em>, <em>f=None</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#FSBA2.utils.searching.linearsearch.linearsearch" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>l</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – list that may contain value given</li>
+<li><strong>value</strong> – value to be searched</li>
+<li><strong>f</strong> (<em>f</em><em>(</em><em>a</em><em>, </em><em>b</em><em>) </em><em>-&gt; int</em>) – comparator function</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">the state whether the value was found</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#bool" title="(in Python v3.6)">bool</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="FSBA2.utils.searching.linearsearch.linearsearch_pos">
+<code class="descclassname">FSBA2.utils.searching.linearsearch.</code><code class="descname">linearsearch_pos</code><span class="sig-paren">(</span><em>l: list</em>, <em>value</em>, <em>f=None</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#FSBA2.utils.searching.linearsearch.linearsearch_pos" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>l</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – the list that may contain value given</li>
+<li><strong>value</strong> – the value to be searched</li>
+<li><strong>f</strong> (<em>f</em><em>(</em><em>a</em><em>, </em><em>b</em><em>) </em><em>-&gt; int</em>) – comparator function</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">the position of first match of value, returning -1 if not found</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3.6/library/functions.html#int" title="(in Python v3.6)">int</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-FSBA2.utils.searching">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-FSBA2.utils.searching" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FSBA2  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Group 7.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
+    </div>
+  </body>
+</html>
