@@ -32,7 +32,6 @@ def qsort(l: list, f=None, lo=0, hi=None) -> list:
         The sorted list.
     """
 
-
     # using function return as default argument is not allowed in python, None is used as placeholder
     if hi is None:
         hi = len(l) - 1
@@ -86,12 +85,8 @@ def __partition(f, l, lo, hi, pivot_idx) -> int:
     if lo == hi:
         return lo
 
-    
-
     # swap the pivot to the lower bound
     l[lo], l[pivot_idx] = l[pivot_idx], l[lo]
-    
-    
 
     # now continue as it picks lower bound as pivot
     pivot = l[lo]

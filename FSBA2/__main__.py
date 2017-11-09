@@ -8,7 +8,6 @@ sys.path.append(os.path.dirname(__file__))
 from utils import *
 
 
-
 if __name__ == '__main__':
     info(__package__)
-    GUI("FSBA", login=True)
+    GUI("FSBA", login=True, tab_dict=config_dict('config.ini'))

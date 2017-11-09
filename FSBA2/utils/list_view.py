@@ -1,4 +1,3 @@
-from random import *
 from tkinter import *
 from tkinter.ttk import *
 import numbers
@@ -11,30 +10,50 @@ class ListView(Frame):
     ListView extends tkinter.Frame
     """
 
-    def __init__(self, parent):
+    def __init__(self, parent, **kwargs):
         """
         Constructor of ListView
 
-        param:
-            parent (tk.Tk): parent of the ListView Object, possibly directly passing the variable assigned from Tk()
-                e.g. root = Tk()
-                     ListView(root)
+        Parameters
+        ----------
+        parent : tkinter Componenets
+            parent of the ListView Object, possibly directly passing the variable assigned from Tk()
+            e.g. root = Tk()
+            ListView(root)
+        **kwargs :
+            arguemnts of query()
         """
         # super-class constructor
         Frame.__init__(self, parent)
         self.root = parent # save the parent for accessing in whole class
         self.pack() # display ListView
 
-        self.table_init() # init table
+        self.tbl_args = kwargs
+        self.rs = query(**kwargs)
+
+        self.tbl = self.Table(self, self.rs)
+
         self.filter_init(self.tbl.update_filter)
+
         self.tbl.pack() # display the table on GUI
+
+        self.edit_pane = self.Fields(self, self.rs)
+
+
+        self.edit_pane.pack()
+        
 
     def filter_init(self, callback):
         """
+        filter_init
+        
         initialize the text field for filter
 
-        param:
-            callback (function(str)): function to be called when the content of the text field is modified
+
+        Parameters
+        ----------------
+        callback : f(str) -> None
+            filter function to be called when the content of the text field is modified
         """
         # text variable
         filterInput_txt = StringVar()
@@ -48,19 +67,46 @@ class ListView(Frame):
 
     def handle_cb(self, f, v):
         """
-        callback handler for text field modification
-        
-        param:
-            f (function(str)): function to be called when the content of the text field is modified
-            v (tkinter.StringVar): textvariable that contains the content of the text field
+        handle_cb
+
+        Callback handler for text field modification
+
+        Parameters
+        ----------------
+        f : f(str) -> None
+            filter function to be called when the content of the text field is modified
+        v : tkinter.StringVar 
+            textvariable that contains the content of the text field
         """
         f(v.get()) # StringVar.get() retrieves the content in the text field
 
-    def table_init(self):
-        """
-        initialize the table
-        """
-        self.tbl = self.Table(self, query(table="sales as s", join="deliveryLocations as d on d.id = s.deliveryLocation_id"))
+    class Fields(Frame):
+        """Fields"""
+        def __init__(self, parent, result_set):
+            """
+            __init__
+
+
+            Parameters
+            ----------------
+            parent : tkinter widget
+                Parent widget of this widget
+            result_set : 3-tuple of lists
+                query result from database, with format (column_description[], column_names[], rows[][])
+            """
+            Frame.__init__(self, parent)
+            self.root = parent
+
+            if result_set == ([], [], []):
+                warning("result_set == ([], [], [])")
+                return
+            else:
+                self.rs = result_set
+
+            self.entries = [tk.Entry(self) for i in  range(len(self.rs[0]))]
+            for x in self.entries:
+                x.pack()
+
 
     class Table(Treeview):
         
@@ -68,12 +114,20 @@ class ListView(Frame):
             """
             Constructor
 
-            param:
+            Parameters
+            ----------------
+            parent
                 parent (tkinter.Frame): parent of widget
-                result_set: (tuple: (column_description, rows)): query result from database
+            result_set : 3-tuple of lists
+                query result from database
+
             """
             Treeview.__init__(self, parent)
             self.root = parent
+            if result_set == ([], [], []):
+                warning("result_set == ([], [], [])")
+                return
+
             self.col_desc, _, self.rows = result_set
             self.visibility = [True] * len(self.rows)
 
@@ -83,6 +137,14 @@ class ListView(Frame):
             self.init_rows()
 
         def update_filter(self, txt):
+            """
+            update_filter
+
+            Parameters
+            ----------------
+            txt : str
+                Filter criterion
+            """
             info(txt)
             if len(txt) < 1:
                 self.visibility = [True] * len(self.rows)
@@ -97,24 +159,26 @@ class ListView(Frame):
 
 
         def config_columns(self):
+            """config_columns"""
             self['columns'] = self['displaycolumns'] =  tuple(zip(*self.col_desc))[0]
             for i, col in enumerate(self['columns']):
                 self.heading("#" + str(i), text=col, command=lambda col=i: self.sortTable(col))
 
         def init_rows(self):
-            #pass
+            """init_rows"""
             self.rows_identifier = []
             for i, _row in enumerate(self.rows):
                 zerothCol, *row = _row
                 self.rows_identifier.append(self.insert('', 'end', iid=i+1, text=zerothCol, values=tuple(row)))
-            info(self.rows_identifier)
-            info(self.order)
+            #info(self.rows_identifier)
+            #info(self.order)
         
         def update_rows(self):
-            #for i, iid in enumerate(self.rows_identifier):
-            #    info(iid)
-            #    info(self.index(iid))
-            #    self.move(iid, '', self.order[i] + 1)
+            """
+            Update Rows
+
+            Update the display of rows
+            """
             row = 0
             for i, row_idx in enumerate(self.order):
                 if self.visibility[i]:
@@ -125,6 +189,15 @@ class ListView(Frame):
                     self.detach(row_idx + 1)
 
         def sortTable(self, columnNo):
+            """
+            sortTable
+
+
+            Parameters
+            ----------------
+            columnNo : int
+                Column number of the column required ascending sort
+            """
             info("column #%d pressed" % columnNo)
             #debug(list(zip(*self.rows))[columnNo])
             #qsort(self.order, lambda a, b: self.comparator(columnNo, a, b))
@@ -133,6 +206,28 @@ class ListView(Frame):
             self.update_rows()
 
         def comparator(self, col, a, b):
+            """
+            comparator
+
+
+            Parameters
+            ----------------
+            col : int
+                The column number which is being sorted.
+            a : int / float / str / None
+                The first value of the pair to be compared.
+            b : int / float / str / None
+                The second value of the pair to be compared.
+
+            Returns
+            -----------------
+            int
+                The comparison result:
+                < 0 if a < b
+                0 if a == b
+                > 0 if a > b
+
+            """
             a, b = self.rows[a][col], self.rows[b][col]
             #print((a, b))
             if a is None or b is None:
@@ -151,6 +246,4 @@ class ListView(Frame):
             return 0
 
 
-def doNothing(*argv):
-    info(argv)
 

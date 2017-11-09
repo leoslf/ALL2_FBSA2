@@ -3,6 +3,7 @@ import inspect
 import linecache
 from logging import *
 
+DBG = True
 
 basicConfig(
     level=DEBUG,
@@ -13,6 +14,11 @@ basicConfig(
 def get_src_line(frame):
     """
     Getting the source line from stack frame
+
+    Parameters
+    ----------
+    frame :
+        stack frame
     """
     line = str(linecache.getline(frame.filename, frame.lineno)).strip()
     return line
@@ -21,8 +27,10 @@ def debug_outer_stack_frame(context = 1):
     """debug_outer_stack_frame
     Get information from outer stack frame
 
-    :param context: number of stackframe to be queried
-    :type context: int
+    Parameters
+    ----------
+    context: int
+        number of stackframe to be queried
 
     """
     f = inspect.stack()[2]

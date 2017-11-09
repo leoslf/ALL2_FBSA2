@@ -3,10 +3,13 @@
 #from . import BaseSortingTestCase
 #
 import sys
+sys.path.append("../")
 from FSBA2.utils.sorting import *
 #
 #import random
 import unittest
+
+manual_running = True
 
 class ParametrizedTestCase(unittest.TestCase):
     def __init__(self, testName, f=None):
@@ -21,31 +24,49 @@ class ParametrizedTestCase(unittest.TestCase):
         print("OK\n")
 
 class SortingTestCase(ParametrizedTestCase):
+    @unittest.skipUnless(manual_running == True, "Preventing direct running from unittest detect")
     def test_EmptyList(self):
         self.assertEqual(self.func([]),[])
 
+    @unittest.skipUnless(manual_running == True, "Preventing direct running from unittest detect")
     def test_OneElem(self):
         self.assertEqual(self.func([0]), [0])
 
+    @unittest.skipUnless(manual_running == True, "Preventing direct running from unittest detect")
     def test_ThreeElemASC(self):
         self.assertEqual(self.func([0,1,2]), [0,1,2])
 
+    @unittest.skipUnless(manual_running == True, "Preventing direct running from unittest detect")
     def test_ThreeElemDESC(self):
         self.assertEqual(self.func([2,1,0]), [0,1,2])
 
 
-def runTestCasesOnFunctionList(cls, funcList):
-    for f in funcList:
-        print(f.__name__)
-        print("-" * len(f.__name__))
-        suite = unittest.TestSuite()
-        for testName in (testName for _, testName in SortingTestCase.__dict__.items() if callable(testName) and testName.__name__[:4] == "test"):
-            suite.addTest(cls(testName.__name__, f=f))
-        unittest.TextTestRunner().run(suite)
-        print()
+#def runTestCasesOnFunctionList(cls, funcList):
+#    for f in funcList:
+#        print(f.__name__)
+#        print("-" * len(f.__name__))
+#        suite = unittest.TestSuite()
+#        for testName in (testName for _, testName in SortingTestCase.__dict__.items() if callable(testName) and testName.__name__[:4] == "test"):
+#            suite.addTest(cls(testName.__name__, f=f))
+#        unittest.TextTestRunner().run(suite)
+#        print()
+#
+##unittest.TextTestRunner(verbosity=2).run(suite)
+#runTestCasesOnFunctionList(SortingTestCase, [qsort, msort, insertionsort, selectionsort, bubblesort])
+def runTestCasesOnFunction(cls, f):
+    print(f.__name__)
+    print("-" * len(f.__name__))
+    suite = unittest.TestSuite()
+    for testName in (testName for _, testName in SortingTestCase.__dict__.items() if callable(testName) and testName.__name__[:4] == "test"):
+        suite.addTest(cls(testName.__name__, f=f))
+    unittest.TextTestRunner().run(suite)
+    print()
 
-#unittest.TextTestRunner(verbosity=2).run(suite)
-runTestCasesOnFunctionList(SortingTestCase, [qsort, msort, insertionsort, selectionsort, bubblesort])
+    
+
+for f in [qsort, msort, insertionsort, selectionsort, bubblesort]:
+    runTestCasesOnFunction(SortingTestCase, f)
+manual_running = False
 
 
 

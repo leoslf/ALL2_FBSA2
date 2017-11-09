@@ -10,18 +10,23 @@ class GUI(tk.Frame):
     Wrapper of Tkinter
     """
 
-    def __init__(self, title = "GUI", mode = GUIMode.normal, parent=None, login = False):
+    def __init__(self, title = "GUI", mode = GUIMode.normal, parent=None, login = False, tab_dict=None):
         """__init__
 
-        :param title: Window Title
-        :type title: str
+        title : str
+            Window Title
 
-        :param mode: (GUIMode enum -> named option (in words) instead of manually typing integer into the field
-        :type mode: GUIMode(Enum)
+        mode : GUIMode(Enum)
+            Named option (nin words) instead of manually typing integer into the field
 
-        :param login: condition whether this constructor should invoke a modal login dialog as child
-        :type login: bool
+        parent : tkinter Widget
+            Intended to use for passing the parent to login dialog
 
+        login : bool 
+            The condition whether this constructor should invoke a modal login dialog as child
+
+        tab_dict : OrderedDict
+            Ordered Dictionary from the config that stores each tab's layout
         """
         
         info("initializing new GUI window")
@@ -40,13 +45,14 @@ class GUI(tk.Frame):
         self.root = tk.Tk()
         # calling super-class constructor
         tk.Frame.__init__(self, self.root)
+
         # goto the customized initialization (common, for either mode: normal or login) method, just trying to make the code clean and easy to understand
         self.initialize(title)
-        self.app_name = title
 
         if mode == GUIMode.login: # if "this should be a login dialog"
             self.loginModeSpecific_init()
         else:
+            self.tab_dict = tab_dict
             self.mainUI()
 
         self.moveToTop()
@@ -56,11 +62,13 @@ class GUI(tk.Frame):
     def initialize(self, title):
         """GUI initialization"""
         self.root.title(title)
+        self.app_name = title
 
     def loginModeSpecific_init(self):
         """loginModeSpecific_init"""
         # override the "X" button to directly terminate the program in login mode
         self.root.protocol('WM_DELETE_WINDOW', self.terminate)
+
         # center the window
         self.centerWindow()
 
@@ -103,7 +111,11 @@ class GUI(tk.Frame):
         return
 
     def mainUI(self):
-        """mainUI"""
+        """
+        mainUI
+
+        Helper function that handles the initialization of children widgets of the Main UI 
+        """
         self.maximize()
         #self.logoBar = self.GradientCanvas(self.root, "white", "black")
         #self.logoBar.grid(
@@ -111,21 +123,25 @@ class GUI(tk.Frame):
         self.LogoBar(self.root, self.app_name, self.displayed_username)
         self.notebook = ttk.Notebook(self.root)
         self.notebook.grid(row=1, column=0, sticky="nsew")
-        tab_txts = ['Accounts', 'Products', 'Sales Order', 'Service Order']
-        self.tabs = {}
-        for tab_txt in tab_txts:
-            self.tabs[tab_txt] = ttk.Frame(self.notebook)
-            self.notebook.add(self.tabs[tab_txt], text=tab_txt)
-        debug(self.tabs)
-        self.notebook.pack(fill="both", expand=True)
-        self.salesOrderUI()
+        #tab_txts = ['Accounts', 'Products', 'Sales Order', 'Service Order', 'Staff']
+        #self.tabs = {}
+        #for tab_txt in tab_txts:
+        #    self.tabs[tab_txt] = ttk.Frame(self.notebook)
+        #    self.notebook.add(self.tabs[tab_txt], text=tab_txt)
 
-    def salesOrderUI(self):
-        tbl = ListView(self.tabs['Sales Order'])
-        tbl.pack()
+        self.tabs = {}
+        for tab_name, tab_data in self.tab_dict.items():
+            self.tabs[tab_name] = ttk.Frame(self.notebook)
+            self.notebook.add(self.tabs[tab_name], text=tab_name)
+            if tab_data['table'] != "":
+                ListView(self.tabs[tab_name], **tab_data).pack()
+            
+
+        debug("self.tabs: %r", self.tabs)
+        self.notebook.pack(fill="both", expand=True)
 
     def maximize(self):
-        """maximize"""
+        """maximize window"""
         root = self.root
         w, h = root.winfo_screenwidth(), root.winfo_screenheight()
         root.geometry("%dx%d+0+0" % (w, h))
@@ -134,7 +150,25 @@ class GUI(tk.Frame):
         root.grid_columnconfigure(0, weight=1)
 
     class LogoBar(tk.Frame):
+        """
+        The Gradient Bar on top
+        """
         def __init__(self, root, app_name, displayed_username):
+            """
+            __init__
+
+
+            Parameters
+            ----------------
+            root : tkinter widget
+                Parent of this wiget
+
+            app_name : str
+                String to be displayed on the Left Hand Side of the Bar
+
+            displayed_username : str
+                Displayed name of logged in user
+            """
             root.update()
             width = root.winfo_width()
             self.width = width
@@ -153,24 +187,31 @@ class GUI(tk.Frame):
 
 
         class GradientCanvas(tk.Canvas):
-            """GradientCanvas"""
+            """
+            GradientCanvas
+            Extends tkinter.Canvas
+
+            The Gradient background, supporting widget of LogoBar
+            """
             def __init__(self, root, color1, color2, height, bd=0, relief="sunken"):
                 """__init__
 
-                :param root: parent of this object
-                :type root: tkinter container / Tk()
+                Parameters
+                ----------
+                root : tkinter container / Tk()
+                    parent of this object
 
-                :param color1: first color
-                :type color1: str / 3-tuple containing rgb value
+                color1 : 3-tuple containing rgb value
+                    first color
 
-                :param color2: second color
-                :type color2: str / 3-tuple containing rgb value
+                color2 : 3-tuple containing rgb value
+                    second color
 
-                :param borderwidth: (inherited) 
-                :type borderwidth: int
+                borderwidth : int 
+                    (inherited) 
 
-                :param relief: (inherited)
-                :type relief: str
+                relief: str
+                    (inherited)
 
                 """
                 tk.Canvas.__init__(self, root, bd=bd, relief=relief, height=height, highlightthickness=0)
@@ -186,11 +227,12 @@ class GUI(tk.Frame):
                 self.pack(fill=tk.X)#, expand=True)
 
             def draw_gradient(self, event=None):
-                """draw_gradient
+                """
+                draw_gradient
+                The actual function that helps generate the gradient line by line.
 
-                :param event: (inherited)
-                :type event: event
-
+                event: event
+                    (inherited)
                 """
                 self.delete("gradient")
                 width = self.winfo_width()
@@ -210,13 +252,21 @@ class GUI(tk.Frame):
             
 
     def moveToTop(self):
-        """moveToTop"""
+        """
+        moveToTop
+
+        Helper function that moves the GUI window to top of another applications
+        """
         self.root.lift()
         self.root.attributes('-topmost', 1)
         self.root.after_idle(self.root.attributes,'-topmost',False)
 
     def centerWindow(self):
-        """centerWindow"""
+        """
+        centerWindow
+
+        Helper function that positions the window to the center.
+        """
         root = self.root
         # Apparently a common hack to get the window size. Temporarily hide the
         # window to avoid update_idletasks() drawing the window in the wrong
@@ -233,6 +283,10 @@ class GUI(tk.Frame):
         root.deiconify()
 
     def terminate(self):
-        """terminate"""
+        """
+        terminate
+
+        Aliasing sys.exit() to terminate the whole program
+        """
         sys.exit()
 
