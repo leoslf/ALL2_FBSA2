@@ -117,17 +117,9 @@ class GUI(tk.Frame):
         Helper function that handles the initialization of children widgets of the Main UI 
         """
         self.maximize()
-        #self.logoBar = self.GradientCanvas(self.root, "white", "black")
-        #self.logoBar.grid(
-        #self.logoBar.pack()
         self.LogoBar(self.root, self.app_name, self.displayed_username)
         self.notebook = ttk.Notebook(self.root)
         self.notebook.grid(row=1, column=0, sticky="nsew")
-        #tab_txts = ['Accounts', 'Products', 'Sales Order', 'Service Order', 'Staff']
-        #self.tabs = {}
-        #for tab_txt in tab_txts:
-        #    self.tabs[tab_txt] = ttk.Frame(self.notebook)
-        #    self.notebook.add(self.tabs[tab_txt], text=tab_txt)
 
         self.tabs = {}
         for tab_name, tab_data in self.tab_dict.items():
