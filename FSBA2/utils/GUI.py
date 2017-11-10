@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from .__import import *
+from .config_handler import *
 
 class GUIMode(Enum):
     normal = 0
@@ -118,19 +119,29 @@ class GUI(tk.Frame):
         """
         self.maximize()
         self.LogoBar(self.root, self.app_name, self.displayed_username)
-        self.notebook = ttk.Notebook(self.root)
-        self.notebook.grid(row=1, column=0, sticky="nsew")
+        self.notebook = ttk.Notebook(self.root, padding=(0,0,0,0))
+        self.notebook.pack(fill="both", expand=True)
+
+        self.notebook.update()
+        width = self.notebook.winfo_width()
+        height = self.notebook.winfo_height()
+        debug("width: %d, height: %d" % (width, height))
 
         self.tabs = {}
         for tab_name, tab_data in self.tab_dict.items():
             self.tabs[tab_name] = ttk.Frame(self.notebook)
-            self.notebook.add(self.tabs[tab_name], text=tab_name)
+            self.tabs[tab_name].pack(fill="both", expand=True)
+            self.tabs[tab_name].update()
+            frameW = self.tabs[tab_name].winfo_width()
+            frameH = self.tabs[tab_name].winfo_height()
+            debug("Frame: width: %d, height: %d" % (frameW, frameH))
+
+            self.notebook.add(self.tabs[tab_name], text=tab_name, sticky="nesw")
             if tab_data['table'] != "":
-                ListView(self.tabs[tab_name], **tab_data).pack()
+                ListView(self.tabs[tab_name], width, height, **tab_data).pack()
             
 
         debug("self.tabs: %r", self.tabs)
-        self.notebook.pack(fill="both", expand=True)
 
     def maximize(self):
         """maximize window"""
@@ -140,6 +151,7 @@ class GUI(tk.Frame):
 
         root.grid_rowconfigure(1, weight=1)
         root.grid_columnconfigure(0, weight=1)
+        root.resizable(False, False)
 
     class LogoBar(tk.Frame):
         """
@@ -167,7 +179,17 @@ class GUI(tk.Frame):
             self.height = int(root.winfo_height() * 0.075)
             tk.Frame.__init__(self, root, height=self.height)
             #canvas = self.GradientCanvas(self, (68,68,68), (32,32,32), self.height)
-            canvas = self.GradientCanvas(self, (0, 198, 251), (0,91,234), self.height, True)
+            cfg_filename = os.path.dirname(os.path.abspath(__file__)) + '/../color_config.ini'
+            info(cfg_filename)
+            config = config_dict(cfg_filename)
+            #grad_name = 'scooter_h'
+            grad_name = 'purple_paradise'
+            #grad_name = 'visions_of_grandeur_h'
+            #grad_name = 'FSBA'
+            colors = list(hex2tuple(config[grad_name]['color%d' % (i + 1)]) for i in range(2))
+            info(colors)
+            canvas = self.GradientCanvas(self, *colors, self.height, horizontal=(config[grad_name]['mode'] == 'h'))
+            #canvas = self.GradientCanvas(self, (0, 198, 251), (0,91,234), self.height, True)
             tk.Label(canvas, text=app_name)
             #lbls = [tk.Label(canvas, text=s, fg="white", bg="green") for s in (app_name, displayed_username)]
             lbls = [tk.Label(canvas, text=s, fg="white", bg="systemTransparent", font=("Helvetica", 20)) for s in (app_name, displayed_username)]
@@ -240,10 +262,10 @@ class GUI(tk.Frame):
                     
                     for i in range(limit):
                         ncolors = list(map(lambda tup: int(tup[0] + (tup[1] * i)), zip(colors[0], ratios)))
-                        debug("ncolors: %r" % ncolors)
+                        #debug("ncolors: %r" % ncolors)
                         #color = "#%4.4x%4.4x%4.4x" % tuple(ncolors)
                         color = "#%02x%02x%02x" % tuple(ncolors)
-                        debug("color: %r" % color)
+                        #debug("color: %r" % color)
                         self.create_line((0, i, width, i + 1), tags=("gradient",), fill=color)
                     self.lower("gradient")
                 else:
@@ -253,10 +275,10 @@ class GUI(tk.Frame):
                     
                     for i in range(limit):
                         ncolors = list(map(lambda tup: int(tup[0] + (tup[1] * i)), zip(colors[0], ratios)))
-                        debug("ncolors: %r" % ncolors)
+                        #debug("ncolors: %r" % ncolors)
                         #color = "#%4.4x%4.4x%4.4x" % tuple(ncolors)
                         color = "#%02x%02x%02x" % tuple(ncolors)
-                        debug("color: %r" % color)
+                        #debug("color: %r" % color)
                         self.create_line((i, 0, i + 1, height), tags=("gradient",), fill=color)
                     self.lower("gradient")
 

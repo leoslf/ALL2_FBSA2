@@ -4,13 +4,16 @@ import numbers
 from .debug import *
 from .sorting import *
 from .odbc import *
+from .table_utils import *
 
 class ListView(Frame):
     """
-    ListView extends tkinter.Frame
+    ListView
+
+    Contain table-like widget and input fields that can query, insert, update and delete the table from database
     """
 
-    def __init__(self, parent, **kwargs):
+    def __init__(self, parent, width, height, **kwargs):
         """
         Constructor of ListView
 
@@ -23,23 +26,25 @@ class ListView(Frame):
         **kwargs :
             arguemnts of query()
         """
+        debug("width: %d, height: %d" % (width, height))
+
+
         # super-class constructor
-        Frame.__init__(self, parent)
+        Frame.__init__(self, parent, width=width, height=height)
         self.root = parent # save the parent for accessing in whole class
         self.pack() # display ListView
+
 
         self.tbl_args = kwargs
         self.rs = query(**kwargs)
 
-        self.tbl = self.Table(self, self.rs)
+        self.tbl = self.Table(self, width, height // 3, self.rs)
 
         self.filter_init(self.tbl.update_filter)
 
         self.tbl.pack() # display the table on GUI
 
         self.edit_pane = self.Fields(self, self.rs)
-
-
         self.edit_pane.pack()
         
 
@@ -100,17 +105,17 @@ class ListView(Frame):
             if result_set == ([], [], []):
                 warning("result_set == ([], [], [])")
                 return
-            else:
-                self.rs = result_set
+            
+            self.rs = result_set
 
-            self.entries = [tk.Entry(self) for i in  range(len(self.rs[0]))]
+            self.entries = [tk.Entry(self, highlightthickness=0) for i in  range(len(self.rs[0]))]
             for x in self.entries:
                 x.pack()
 
 
     class Table(Treeview):
         
-        def __init__(self, parent, result_set):
+        def __init__(self, parent, width, height, result_set):
             """
             Constructor
 
@@ -122,7 +127,12 @@ class ListView(Frame):
                 query result from database
 
             """
-            Treeview.__init__(self, parent)
+            # TODO
+            Treeview.__init__(self, parent)#, padding=(0,0,0,0))
+
+            self.width = width
+
+            self.pack(fill="x", expand=True)
             self.root = parent
             if result_set == ([], [], []):
                 warning("result_set == ([], [], [])")
@@ -145,8 +155,10 @@ class ListView(Frame):
             txt : str
                 Filter criterion
             """
-            info(txt)
+            info("filter input: %r" % txt)
+
             if len(txt) < 1:
+                # no filter
                 self.visibility = [True] * len(self.rows)
             else:
                 self.visibility = [False] * len(self.rows)
@@ -154,14 +166,22 @@ class ListView(Frame):
                     for j in range(len(self.rows[i])):
                         if str(self.rows[i][j])[:len(txt)] == txt:
                             self.visibility[i] = True
-                            break
+                            break # the row is valid already
+
             self.update_rows()
 
 
         def config_columns(self):
             """config_columns"""
             self['columns'] = self['displaycolumns'] =  tuple(zip(*self.col_desc))[0]
+            debug(self['columns'])
+            col_len = max_col(self['columns'], self.rows)
+            debug("col_len: %r", col_len)
+            total_len = sum(col_len)
+            col_len = [l* int(self.width / total_len) for l in col_len]
+            debug("new col_len: %r", col_len)
             for i, col in enumerate(self['columns']):
+                self.column("#" + str(i), width=col_len[i], stretch=False)
                 self.heading("#" + str(i), text=col, command=lambda col=i: self.sortTable(col))
 
         def init_rows(self):
