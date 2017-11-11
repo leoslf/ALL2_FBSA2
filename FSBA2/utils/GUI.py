@@ -33,6 +33,8 @@ class GUI(tk.Frame):
         info("initializing new GUI window")
         debug(debug_outer_stack_frame()) # debug: dump caller's info
 
+        self.mode = GUIMode(mode)
+
         if login == True:
             # Prompt a MODAL login dialog
             # ** Recursive call ** to this class, construct a modal dialog, i.e. it does NOT show the main dialog before a successful login
@@ -101,13 +103,13 @@ class GUI(tk.Frame):
         """Check whether the combination of username and input is valid for login"""
         #user = self.usernamesvalue.get()
         #pw = self.passwordsvalue.get()
-        vals = [x.get() for x in self.login_txtVar]
+        vals = [escapeSQLi(x.get()) for x in self.login_txtVar]
         info("user: %s, pass: %s" % tuple(vals))#( user, pw))
-        rs = query("staff", "CONCAT(firstName, ' ', lastName)", "username = '%s' AND password = '%s'" % tuple(vals))
+        rs = queryData("staff", "CONCAT(firstName, ' ', lastName)", "username = '%s' AND password = '%s'" % tuple(vals))
         #if all(x == "admin" for x in vals): #[user, pw]):
         debug(rs)
-        if len(rs[2]) == 1: #[user, pw]):
-            self.parent.displayed_username = rs[2][0][0]
+        if len(rs[1]) == 1: #[user, pw]):
+            self.parent.displayed_username = rs[1][0][0]
             self.root.destroy()
         return
 
@@ -118,7 +120,7 @@ class GUI(tk.Frame):
         Helper function that handles the initialization of children widgets of the Main UI 
         """
         self.maximize()
-        self.LogoBar(self.root, self.app_name, self.displayed_username)
+        self.logobar = self.LogoBar(self.root, self.app_name, self.displayed_username)
         self.notebook = ttk.Notebook(self.root, padding=(0,0,0,0))
         self.notebook.pack(fill="both", expand=True)
 
@@ -128,6 +130,7 @@ class GUI(tk.Frame):
         debug("width: %d, height: %d" % (width, height))
 
         self.tabs = {}
+
         for tab_name, tab_data in self.tab_dict.items():
             self.tabs[tab_name] = ttk.Frame(self.notebook)
             self.tabs[tab_name].pack(fill="both", expand=True)
@@ -139,8 +142,8 @@ class GUI(tk.Frame):
             self.notebook.add(self.tabs[tab_name], text=tab_name, sticky="nesw")
             if tab_data['table'] != "":
                 ListView(self.tabs[tab_name], width, height, **tab_data).pack()
+        self.tab_content = ListView(None, 0, 0)
             
-
         debug("self.tabs: %r", self.tabs)
 
     def maximize(self):

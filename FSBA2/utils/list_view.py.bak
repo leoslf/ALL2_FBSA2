@@ -1,12 +1,12 @@
-import tkinter as tk
-import tkinter.ttk as ttk
+from tkinter import *
+from tkinter.ttk import *
 import numbers
 from .debug import *
 from .sorting import *
 from .odbc import *
 from .table_utils import *
 
-class ListView(tk.Frame):
+class ListView(Frame):
     """
     ListView
 
@@ -30,7 +30,7 @@ class ListView(tk.Frame):
 
 
         # super-class constructor
-        tk.Frame.__init__(self, parent, width=width, height=height)
+        Frame.__init__(self, parent, width=width, height=height)
         self.root = parent # save the parent for accessing in whole class
         self.pack() # display ListView
 
@@ -61,12 +61,12 @@ class ListView(tk.Frame):
             filter function to be called when the content of the text field is modified
         """
         # text variable
-        filterInput_txt = tk.StringVar()
+        filterInput_txt = StringVar()
         # set callback function when the content on the text field is edited (both adding characters at the end and backspace)
         filterInput_txt.trace("w", lambda *argv: self.handle_cb(callback, filterInput_txt))
         
         # init a text field with the text variable with callback
-        e = tk.Entry(self, textvariable=filterInput_txt)
+        e = Entry(self, textvariable=filterInput_txt)
         # display the text field
         e.pack()
 
@@ -85,7 +85,7 @@ class ListView(tk.Frame):
         """
         f(v.get()) # StringVar.get() retrieves the content in the text field
 
-    class Fields(tk.Frame):
+    class Fields(Frame):
         """Fields"""
         def __init__(self, parent, result_set):
             """
@@ -99,7 +99,7 @@ class ListView(tk.Frame):
             result_set : 2-tuple of lists
                 query result from database, with format (column_description[], column_names[], rows[][])
             """
-            tk.Frame.__init__(self, parent)
+            Frame.__init__(self, parent)
             self.root = parent
 
             if result_set == ([], []):
@@ -113,7 +113,7 @@ class ListView(tk.Frame):
                 x.pack()
 
 
-    class Table(ttk.Treeview):
+    class Table(Treeview):
         
         def __init__(self, parent, width, height, result_set):
             """
@@ -128,7 +128,7 @@ class ListView(tk.Frame):
 
             """
             # TODO
-            ttk.Treeview.__init__(self, parent)#, padding=(0,0,0,0))
+            Treeview.__init__(self, parent)#, padding=(0,0,0,0))
 
             self.width = width
 

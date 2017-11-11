@@ -1,34 +1,5 @@
 import pymysql
-import re
 from .debug import *
-
-fix_import(__file__)
-
-def escapeSQLi(user_input: str) -> str:
-    """
-    escapeSQLi
-    A very simple implementation of SQL injection prevention
-
-
-    Parameters
-    ----------------
-    user_input : str
-        Potentially unclean user input
-
-    Returns
-    ----------------
-    str
-        the string that has been tried to sanitize
-    """
-    debug("original: %r", user_input)
-    ret = re.sub(r"('|\"|/\*|\*/|-- |;)", "", user_input)
-    debug("sanitized: %r", ret)
-    return ret
- 
-
-
-
-
 
 #connect database
 def getConnection():
@@ -44,12 +15,8 @@ def getDBcursor():
     return db.cursor
 
 #display data
-def queryData(table, columns="*", condition="", join=""):
-    sql = "SELECT "  + columns \
-                + " FROM " + table \
-                + ("" if condition == "" else(" WHERE " + condition))
-                # TODO join
-                                        
+def queryData(table, columns="*", condition=""):
+    sql = "SELECT "  + columns + " FROM " + table + ("" if condition == "" else(" WHERE " + condition))
     conn = getConnection()
     try:
     #cursor = getDBcursor()

@@ -1,4 +1,5 @@
 import sys
+import os
 import inspect
 import linecache
 from logging import *
@@ -35,3 +36,9 @@ def debug_outer_stack_frame(context = 1):
     """
     f = inspect.stack()[2]
     return "caller backtrace : %15s: line %3d: %s()  |  src expr ` %s `" %(f.filename, f.lineno, f.function, get_src_line(f))
+
+def fix_import(f):
+    cur_dir = os.path.dirname(os.path.abspath(f))
+    sys.path.append(cur_dir)
+    return cur_dir
+    
