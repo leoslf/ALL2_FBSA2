@@ -142,7 +142,6 @@ class GUI(tk.Frame):
             self.notebook.add(self.tabs[tab_name], text=tab_name, sticky="nesw")
             if tab_data['table'] != "":
                 ListView(self.tabs[tab_name], width, height, **tab_data).pack()
-        self.tab_content = ListView(None, 0, 0)
             
         debug("self.tabs: %r", self.tabs)
 

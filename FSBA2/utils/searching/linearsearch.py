@@ -48,3 +48,16 @@ def linearsearch(l: list, value, f=None) -> bool:
         the state whether the value was found
     """
     return linearsearch_pos(l, value, f) != -1
+
+def linearsearch_table(l: list, filter_str, f=None) -> list:
+    assert len(l) > 0
+
+    ret = [False] * len(l)
+
+    if f is None:
+        f = default_cmp
+
+    for i in range(len(l)):
+         ret[i] = linearsearch(l[i], filter_str, f)
+
+    return ret
