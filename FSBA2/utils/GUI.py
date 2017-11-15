@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from .__import import *
 from .config_handler import *
+from .report_output import *
 
 class GUIMode(Enum):
     normal = 0
@@ -142,6 +143,8 @@ class GUI(tk.Frame):
             self.notebook.add(self.tabs[tab_name], text=tab_name, sticky="nesw")
             if tab_data['table'] != "":
                 ListView(self.tabs[tab_name], width, height, **tab_data).pack()
+                
+            report_output()
             
         debug("self.tabs: %r", self.tabs)
 
