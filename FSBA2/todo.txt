@@ -1,0 +1,1 @@
+dont max the frame width in notebook s.t. there's margin

@@ -1,0 +1,201 @@
+2017-11-17 06:12:39 - [INFO] __main__.py:5:<module>: Package: ''
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:8:config_dict: ['Accounts', 'Products', 'Reports', 'Sales Order', 'Service Order', 'Staff']
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:10:config_dict: OrderedDict([('Accounts', {'table': 'customers'}), ('Products', {'table': 'product'}), ('Reports', {'table': ''}), ('Sales Order', {'table': 'SalesOrder'}), ('Service Order', {'join': 'Zone as z on s.Zone_id = z.id', 'table': 'ServiceOrder as s'}), ('Staff', {'table': 'staff'})])
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:11:config_dict: 
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:12:config_dict: Config
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:14:config_dict: 	'Accounts'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'table': 'customers'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:14:config_dict: 	'Products'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'table': 'product'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:14:config_dict: 	'Reports'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'table': ''
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:14:config_dict: 	'Sales Order'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'table': 'SalesOrder'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:14:config_dict: 	'Service Order'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'join': 'Zone as z on s.Zone_id = z.id'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'table': 'ServiceOrder as s'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:14:config_dict: 	'Staff'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'table': 'staff'
+2017-11-17 06:12:39 - [INFO] GUI.py:34:__init__: initializing new GUI window
+2017-11-17 06:12:39 - [DEBUG] GUI.py:35:__init__: caller backtrace :   ./__main__.py: line   7: <module>()  |  src expr ` GUI("FSBA v2.0", login=False, tab_dict=config_dict('config.ini')) `
+2017-11-17 06:12:39 - [INFO] GUI.py:186:__init__: /Users/leosin/python3/projects/all_proj2/FSBA2/utils/../color_config.ini
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:8:config_dict: ['pizelex', 'velvet_sun', 'telegram', 'scooter', 'scooter_h', 'visions_of_grandeur', 'visions_of_grandeur_h', 'purple_paradise', 'horizon', 'FSBA', 'blue']
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:10:config_dict: OrderedDict([('pizelex', {'color1': '114357', 'mode': 'v', 'color2': 'f29492'}), ('velvet_sun', {'color1': 'e1eec3', 'mode': 'v', 'color2': 'f05053'}), ('telegram', {'color1': '1c92d2', 'mode': 'h', 'color2': 'f2fcfe'}), ('scooter', {'color1': '36d1dc', 'mode': 'v', 'color2': '5b86e5'}), ('scooter_h', {'color1': '36d1dc', 'mode': 'h', 'color2': '5b86e5'}), ('visions_of_grandeur', {'color1': '000046', 'mode': 'v', 'color2': '1cb5e0'}), ('visions_of_grandeur_h', {'color1': '000046', 'mode': 'h', 'color2': '1cb5e0'}), ('purple_paradise', {'color1': '1d2b64', 'mode': 'h', 'color2': 'f8cdda'}), ('horizon', {'color1': '003973', 'mode': 'v', 'color2': 'e5e5be'}), ('FSBA', {'color1': '444444', 'mode': 'h', 'color2': '202020'}), ('blue', {'color1': '00c6fb', 'mode': 'h', 'color2': '005bea'})])
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:11:config_dict: 
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:12:config_dict: Config
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:14:config_dict: 	'pizelex'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'color1': '114357'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'mode': 'v'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'color2': 'f29492'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:14:config_dict: 	'velvet_sun'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'color1': 'e1eec3'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'mode': 'v'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'color2': 'f05053'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:14:config_dict: 	'telegram'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'color1': '1c92d2'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'mode': 'h'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'color2': 'f2fcfe'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:14:config_dict: 	'scooter'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'color1': '36d1dc'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'mode': 'v'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'color2': '5b86e5'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:14:config_dict: 	'scooter_h'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'color1': '36d1dc'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'mode': 'h'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'color2': '5b86e5'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:14:config_dict: 	'visions_of_grandeur'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'color1': '000046'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'mode': 'v'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'color2': '1cb5e0'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:14:config_dict: 	'visions_of_grandeur_h'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'color1': '000046'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'mode': 'h'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'color2': '1cb5e0'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:14:config_dict: 	'purple_paradise'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'color1': '1d2b64'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'mode': 'h'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'color2': 'f8cdda'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:14:config_dict: 	'horizon'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'color1': '003973'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'mode': 'v'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'color2': 'e5e5be'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:14:config_dict: 	'FSBA'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'color1': '444444'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'mode': 'h'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'color2': '202020'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:14:config_dict: 	'blue'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'color1': '00c6fb'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'mode': 'h'
+2017-11-17 06:12:39 - [DEBUG] config_handler.py:16:config_dict: 		'color2': '005bea'
+2017-11-17 06:12:39 - [INFO] GUI.py:190:__init__: [(29, 43, 100), (248, 205, 218)]
+2017-11-17 06:12:39 - [DEBUG] GUI.py:136:mainUI: frame_w: 1296
+2017-11-17 06:12:39 - [DEBUG] list_view.py:32:__init__: width: 1296, height: 900
+2017-11-17 06:12:39 - [DEBUG] odbc.py:35:queryData: SELECT * FROM customers
+2017-11-17 06:12:39 - [DEBUG] odbc.py:43:queryData: [{'created_by': 1, 'Address': 'd', 'id': 14, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3)}, {'created_by': 1, 'Address': 'd', 'id': 15, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 1)}, {'created_by': 1, 'Address': 'd', 'id': 16, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 1)}, {'created_by': 1, 'Address': 'd', 'id': 17, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 1)}, {'created_by': 1, 'Address': 'd', 'id': 18, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 1)}, {'created_by': 1, 'Address': 'd', 'id': 19, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 2)}, {'created_by': 1, 'Address': 'd', 'id': 20, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 2)}, {'created_by': 1, 'Address': 'd', 'id': 21, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 2)}, {'created_by': 1, 'Address': 'd', 'id': 22, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 2)}, {'created_by': 1, 'Address': 'd', 'id': 23, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 2)}, {'created_by': 1, 'Address': 'd', 'id': 24, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 2)}, {'created_by': 1, 'Address': 'd', 'id': 25, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 2)}, {'created_by': 1, 'Address': 'd', 'id': 26, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 3)}, {'created_by': 1, 'Address': 'd', 'id': 27, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 3)}, {'created_by': 1, 'Address': 'd', 'id': 28, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 3)}, {'created_by': 1, 'Address': 'd', 'id': 29, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 3)}, {'created_by': 1, 'Address': 'd', 'id': 30, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 3)}, {'created_by': 1, 'Address': 'd', 'id': 31, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 3)}, {'created_by': 1, 'Address': 'd', 'id': 32, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 3)}, {'created_by': 1, 'Address': 'd', 'id': 33, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 4)}, {'created_by': 1, 'Address': 'd', 'id': 34, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 4)}]
+2017-11-17 06:12:39 - [DEBUG] list_view.py:254:config_columns: ('id', 'Title', 'FirstName', 'LastName', 'CompanyName', 'Address', 'Created_date', 'created_by')
+2017-11-17 06:12:39 - [DEBUG] list_view.py:257:config_columns: col_len: [2, 5, 9, 8, 11, 7, 19, 10]
+2017-11-17 06:12:39 - [DEBUG] list_view.py:260:config_columns: new col_len: [32, 80, 144, 128, 176, 112, 304, 160]
+2017-11-17 06:12:39 - [DEBUG] list_view.py:364:__init__: width: 1196
+2017-11-17 06:12:39 - [DEBUG] odbc.py:35:queryData: SELECT * FROM customers
+2017-11-17 06:12:39 - [DEBUG] odbc.py:43:queryData: [{'created_by': 1, 'Address': 'd', 'id': 14, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3)}, {'created_by': 1, 'Address': 'd', 'id': 15, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 1)}, {'created_by': 1, 'Address': 'd', 'id': 16, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 1)}, {'created_by': 1, 'Address': 'd', 'id': 17, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 1)}, {'created_by': 1, 'Address': 'd', 'id': 18, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 1)}, {'created_by': 1, 'Address': 'd', 'id': 19, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 2)}, {'created_by': 1, 'Address': 'd', 'id': 20, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 2)}, {'created_by': 1, 'Address': 'd', 'id': 21, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 2)}, {'created_by': 1, 'Address': 'd', 'id': 22, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 2)}, {'created_by': 1, 'Address': 'd', 'id': 23, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 2)}, {'created_by': 1, 'Address': 'd', 'id': 24, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 2)}, {'created_by': 1, 'Address': 'd', 'id': 25, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 2)}, {'created_by': 1, 'Address': 'd', 'id': 26, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 3)}, {'created_by': 1, 'Address': 'd', 'id': 27, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 3)}, {'created_by': 1, 'Address': 'd', 'id': 28, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 3)}, {'created_by': 1, 'Address': 'd', 'id': 29, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 3)}, {'created_by': 1, 'Address': 'd', 'id': 30, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 3)}, {'created_by': 1, 'Address': 'd', 'id': 31, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 3)}, {'created_by': 1, 'Address': 'd', 'id': 32, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 3)}, {'created_by': 1, 'Address': 'd', 'id': 33, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 4)}, {'created_by': 1, 'Address': 'd', 'id': 34, 'Title': 'Mr', 'FirstName': 'a', 'LastName': 'b', 'CompanyName': 'c', 'Created_date': datetime.datetime(2017, 11, 17, 3, 3, 4)}]
+2017-11-17 06:12:39 - [DEBUG] list_view.py:32:__init__: width: 1296, height: 900
+2017-11-17 06:12:39 - [DEBUG] odbc.py:35:queryData: SELECT * FROM product
+2017-11-17 06:12:39 - [DEBUG] odbc.py:43:queryData: [{'name': 'FSBA', 'Price': 10000.0, 'id': 1, 'Category': 'A'}]
+2017-11-17 06:12:39 - [DEBUG] list_view.py:254:config_columns: ('id', 'name', 'Category', 'Price')
+2017-11-17 06:12:39 - [DEBUG] list_view.py:257:config_columns: col_len: [2, 4, 8, 7]
+2017-11-17 06:12:39 - [DEBUG] list_view.py:260:config_columns: new col_len: [112, 224, 448, 392]
+2017-11-17 06:12:39 - [DEBUG] list_view.py:364:__init__: width: 1196
+2017-11-17 06:12:39 - [DEBUG] odbc.py:35:queryData: SELECT * FROM product
+2017-11-17 06:12:39 - [DEBUG] odbc.py:43:queryData: [{'name': 'FSBA', 'Price': 10000.0, 'id': 1, 'Category': 'A'}]
+2017-11-17 06:12:39 - [DEBUG] list_view.py:32:__init__: width: 1296, height: 900
+2017-11-17 06:12:39 - [DEBUG] odbc.py:35:queryData: SELECT * FROM SalesOrder
+2017-11-17 06:12:39 - [DEBUG] odbc.py:43:queryData: [{'source': 'Advertisement', 'created_by': 1, 'last_updated': datetime.datetime(2017, 4, 27, 9, 23, 55), 'PaymentMethod_id': 1, 'id': 1, 'date_created': datetime.datetime(2017, 4, 27, 9, 23, 55), 'price': 0.0, 'PrintStatus_id': 1, 'date': datetime.date(2017, 4, 28), 'Customer_id': 1, 'OrderStatus_id': 1}, {'source': 'Advertisement', 'created_by': 1, 'last_updated': datetime.datetime(2017, 4, 27, 9, 23, 55), 'PaymentMethod_id': 1, 'id': 2, 'date_created': datetime.datetime(2017, 4, 27, 9, 23, 55), 'price': 1.0, 'PrintStatus_id': 1, 'date': datetime.date(2017, 4, 28), 'Customer_id': 2, 'OrderStatus_id': 1}, {'source': 'Advertisement', 'created_by': 1, 'last_updated': datetime.datetime(2017, 4, 27, 9, 23, 55), 'PaymentMethod_id': 1, 'id': 3, 'date_created': datetime.datetime(2017, 4, 27, 9, 23, 55), 'price': 2.0, 'PrintStatus_id': 1, 'date': datetime.date(2017, 4, 28), 'Customer_id': 3, 'OrderStatus_id': 1}, {'source': 'Advertisement', 'created_by': 1, 'last_updated': datetime.datetime(2017, 4, 27, 9, 23, 55), 'PaymentMethod_id': 1, 'id': 4, 'date_created': datetime.datetime(2017, 4, 27, 9, 23, 55), 'price': 3.0, 'PrintStatus_id': 1, 'date': datetime.date(2017, 4, 28), 'Customer_id': 4, 'OrderStatus_id': 1}, {'source': 'Advertisement', 'created_by': 1, 'last_updated': datetime.datetime(2017, 4, 27, 17, 28, 5), 'PaymentMethod_id': 1, 'id': 5, 'date_created': datetime.datetime(2017, 4, 27, 17, 28, 5), 'price': 0.0, 'PrintStatus_id': 1, 'date': datetime.date(2017, 4, 28), 'Customer_id': 5, 'OrderStatus_id': 1}, {'source': 'Advertisement', 'created_by': 1, 'last_updated': datetime.datetime(2017, 4, 27, 17, 31, 18), 'PaymentMethod_id': 1, 'id': 6, 'date_created': datetime.datetime(2017, 4, 27, 17, 31, 18), 'price': 0.0, 'PrintStatus_id': 1, 'date': datetime.date(2017, 4, 28), 'Customer_id': 6, 'OrderStatus_id': 1}, {'source': 'Advertisement', 'created_by': 1, 'last_updated': datetime.datetime(2017, 4, 27, 17, 37, 15), 'PaymentMethod_id': 1, 'id': 7, 'date_created': datetime.datetime(2017, 4, 27, 17, 37, 15), 'price': 0.0, 'PrintStatus_id': 1, 'date': datetime.date(2017, 4, 28), 'Customer_id': 7, 'OrderStatus_id': 1}, {'source': 'Advertisement', 'created_by': 1, 'last_updated': datetime.datetime(2017, 4, 27, 17, 43, 15), 'PaymentMethod_id': 1, 'id': 8, 'date_created': datetime.datetime(2017, 4, 27, 17, 43, 15), 'price': 0.0, 'PrintStatus_id': 1, 'date': datetime.date(2017, 4, 28), 'Customer_id': 8, 'OrderStatus_id': 1}]
+2017-11-17 06:12:39 - [DEBUG] list_view.py:254:config_columns: ('id', 'Customer_id', 'PrintStatus_id', 'OrderStatus_id', 'date', 'date_created', 'last_updated', 'price', 'source', 'PaymentMethod_id', 'created_by')
+2017-11-17 06:12:39 - [DEBUG] list_view.py:257:config_columns: col_len: [2, 11, 14, 14, 10, 19, 19, 5, 13, 16, 10]
+2017-11-17 06:12:39 - [DEBUG] list_view.py:260:config_columns: new col_len: [16, 88, 112, 112, 80, 152, 152, 40, 104, 128, 80]
+2017-11-17 06:12:39 - [DEBUG] list_view.py:364:__init__: width: 1196
+2017-11-17 06:12:39 - [DEBUG] odbc.py:35:queryData: SELECT * FROM SalesOrder
+2017-11-17 06:12:39 - [DEBUG] odbc.py:43:queryData: [{'source': 'Advertisement', 'created_by': 1, 'last_updated': datetime.datetime(2017, 4, 27, 9, 23, 55), 'PaymentMethod_id': 1, 'id': 1, 'date_created': datetime.datetime(2017, 4, 27, 9, 23, 55), 'price': 0.0, 'PrintStatus_id': 1, 'date': datetime.date(2017, 4, 28), 'Customer_id': 1, 'OrderStatus_id': 1}, {'source': 'Advertisement', 'created_by': 1, 'last_updated': datetime.datetime(2017, 4, 27, 9, 23, 55), 'PaymentMethod_id': 1, 'id': 2, 'date_created': datetime.datetime(2017, 4, 27, 9, 23, 55), 'price': 1.0, 'PrintStatus_id': 1, 'date': datetime.date(2017, 4, 28), 'Customer_id': 2, 'OrderStatus_id': 1}, {'source': 'Advertisement', 'created_by': 1, 'last_updated': datetime.datetime(2017, 4, 27, 9, 23, 55), 'PaymentMethod_id': 1, 'id': 3, 'date_created': datetime.datetime(2017, 4, 27, 9, 23, 55), 'price': 2.0, 'PrintStatus_id': 1, 'date': datetime.date(2017, 4, 28), 'Customer_id': 3, 'OrderStatus_id': 1}, {'source': 'Advertisement', 'created_by': 1, 'last_updated': datetime.datetime(2017, 4, 27, 9, 23, 55), 'PaymentMethod_id': 1, 'id': 4, 'date_created': datetime.datetime(2017, 4, 27, 9, 23, 55), 'price': 3.0, 'PrintStatus_id': 1, 'date': datetime.date(2017, 4, 28), 'Customer_id': 4, 'OrderStatus_id': 1}, {'source': 'Advertisement', 'created_by': 1, 'last_updated': datetime.datetime(2017, 4, 27, 17, 28, 5), 'PaymentMethod_id': 1, 'id': 5, 'date_created': datetime.datetime(2017, 4, 27, 17, 28, 5), 'price': 0.0, 'PrintStatus_id': 1, 'date': datetime.date(2017, 4, 28), 'Customer_id': 5, 'OrderStatus_id': 1}, {'source': 'Advertisement', 'created_by': 1, 'last_updated': datetime.datetime(2017, 4, 27, 17, 31, 18), 'PaymentMethod_id': 1, 'id': 6, 'date_created': datetime.datetime(2017, 4, 27, 17, 31, 18), 'price': 0.0, 'PrintStatus_id': 1, 'date': datetime.date(2017, 4, 28), 'Customer_id': 6, 'OrderStatus_id': 1}, {'source': 'Advertisement', 'created_by': 1, 'last_updated': datetime.datetime(2017, 4, 27, 17, 37, 15), 'PaymentMethod_id': 1, 'id': 7, 'date_created': datetime.datetime(2017, 4, 27, 17, 37, 15), 'price': 0.0, 'PrintStatus_id': 1, 'date': datetime.date(2017, 4, 28), 'Customer_id': 7, 'OrderStatus_id': 1}, {'source': 'Advertisement', 'created_by': 1, 'last_updated': datetime.datetime(2017, 4, 27, 17, 43, 15), 'PaymentMethod_id': 1, 'id': 8, 'date_created': datetime.datetime(2017, 4, 27, 17, 43, 15), 'price': 0.0, 'PrintStatus_id': 1, 'date': datetime.date(2017, 4, 28), 'Customer_id': 8, 'OrderStatus_id': 1}]
+2017-11-17 06:12:39 - [DEBUG] list_view.py:54:__init__: if kwargs['table'] == 'SalesOrder':
+2017-11-17 06:12:39 - [DEBUG] odbc.py:35:queryData: SELECT sequenceNumber, Product_id, price FROM LineItem WHERE 0
+2017-11-17 06:12:39 - [DEBUG] odbc.py:43:queryData: ()
+2017-11-17 06:12:39 - [DEBUG] list_view.py:254:config_columns: ('sequenceNumber', 'Product_id', 'price')
+2017-11-17 06:12:39 - [DEBUG] list_view.py:257:config_columns: col_len: [14, 10, 5]
+2017-11-17 06:12:39 - [DEBUG] list_view.py:260:config_columns: new col_len: [574, 410, 205]
+2017-11-17 06:12:39 - [DEBUG] list_view.py:364:__init__: width: 1196
+2017-11-17 06:12:39 - [DEBUG] odbc.py:35:queryData: SELECT sequenceNumber, Product_id, price FROM LineItem
+2017-11-17 06:12:39 - [DEBUG] odbc.py:43:queryData: [{'price': 10000.0, 'Product_id': 1, 'sequenceNumber': 1}, {'price': 10000.0, 'Product_id': 1, 'sequenceNumber': 1}, {'price': 10000.0, 'Product_id': 1, 'sequenceNumber': 1}]
+2017-11-17 06:12:39 - [DEBUG] list_view.py:32:__init__: width: 1296, height: 900
+2017-11-17 06:12:39 - [DEBUG] odbc.py:35:queryData: SELECT * FROM ServiceOrder as s INNER JOIN Zone as z on s.Zone_id = z.id
+2017-11-17 06:12:39 - [DEBUG] odbc.py:43:queryData: ()
+2017-11-17 06:12:39 - [DEBUG] list_view.py:254:config_columns: ('id', 'printStatus_id', 'OrderStatus_id', 'Zone_id', 'date', 'date_created', 'last_updated', 'Timeslot_id', 'price', 'PaymentMethod_id', 'Customer_id', 'create_by', 'Product_id', 'id', 'location')
+2017-11-17 06:12:39 - [DEBUG] list_view.py:257:config_columns: col_len: [2, 14, 14, 7, 4, 12, 12, 11, 5, 16, 11, 9, 10, 2, 8]
+2017-11-17 06:12:39 - [DEBUG] list_view.py:260:config_columns: new col_len: [16, 112, 112, 56, 32, 96, 96, 88, 40, 128, 88, 72, 80, 16, 64]
+2017-11-17 06:12:39 - [DEBUG] list_view.py:364:__init__: width: 1196
+2017-11-17 06:12:39 - [DEBUG] odbc.py:35:queryData: SELECT * FROM ServiceOrder as s INNER JOIN Zone as z on s.Zone_id = z.id
+2017-11-17 06:12:39 - [DEBUG] odbc.py:43:queryData: ()
+2017-11-17 06:12:39 - [DEBUG] list_view.py:32:__init__: width: 1296, height: 900
+2017-11-17 06:12:39 - [DEBUG] odbc.py:35:queryData: SELECT * FROM staff
+2017-11-17 06:12:39 - [DEBUG] odbc.py:43:queryData: [{'created_date': datetime.datetime(2017, 4, 4, 18, 50, 5), 'password': 'admin', 'status': 1, 'id': 1, 'lastName': '', 'username': 'admin', 'emailAddr': 'leo69219326@gmail.com', 'role': 'Administrator', 'firstName': 'System Administrator'}, {'created_date': datetime.datetime(2017, 4, 4, 18, 50, 5), 'password': 'leosin', 'status': 1, 'id': 2, 'lastName': 'Sin', 'username': 'leosin', 'emailAddr': 'leo69219326@gmail.com', 'role': 'Administrator', 'firstName': 'Leo'}]
+2017-11-17 06:12:39 - [DEBUG] list_view.py:254:config_columns: ('id', 'username', 'password', 'emailAddr', 'firstName', 'lastName', 'role', 'status', 'created_date')
+2017-11-17 06:12:39 - [DEBUG] list_view.py:257:config_columns: col_len: [2, 8, 8, 21, 20, 8, 13, 6, 19]
+2017-11-17 06:12:39 - [DEBUG] list_view.py:260:config_columns: new col_len: [22, 88, 88, 231, 220, 88, 143, 66, 209]
+2017-11-17 06:12:39 - [DEBUG] list_view.py:364:__init__: width: 1196
+2017-11-17 06:12:39 - [DEBUG] odbc.py:35:queryData: SELECT * FROM staff
+2017-11-17 06:12:39 - [DEBUG] odbc.py:43:queryData: [{'created_date': datetime.datetime(2017, 4, 4, 18, 50, 5), 'password': 'admin', 'status': 1, 'id': 1, 'lastName': '', 'username': 'admin', 'emailAddr': 'leo69219326@gmail.com', 'role': 'Administrator', 'firstName': 'System Administrator'}, {'created_date': datetime.datetime(2017, 4, 4, 18, 50, 5), 'password': 'leosin', 'status': 1, 'id': 2, 'lastName': 'Sin', 'username': 'leosin', 'emailAddr': 'leo69219326@gmail.com', 'role': 'Administrator', 'firstName': 'Leo'}]
+2017-11-17 06:12:39 - [DEBUG] GUI.py:146:mainUI: self.tabs: {'Staff': <tkinter.ttk.Frame object .4514696720.4620908640>, 'Reports': <tkinter.ttk.Frame object .4514696720.4533935464>, 'Products': <tkinter.ttk.Frame object .4514696720.4533819992>, 'Sales Order': <tkinter.ttk.Frame object .4514696720.4533949272>, 'Service Order': <tkinter.ttk.Frame object .4514696720.4533984840>, 'Accounts': <tkinter.ttk.Frame object .4514696720.4517471512>}
+2017-11-17 06:12:43 - [DEBUG] list_view.py:213:on_click: item_idx: 0, [1, 1, 1, 1, datetime.date(2017, 4, 28), datetime.datetime(2017, 4, 27, 9, 23, 55), datetime.datetime(2017, 4, 27, 9, 23, 55), 0.0, 'Advertisement', 1, 1]
+2017-11-17 06:12:43 - [DEBUG] list_view.py:216:on_click: calling self.click_cb
+2017-11-17 06:12:43 - [DEBUG] list_view.py:472:setValues: index: 0
+2017-11-17 06:12:43 - [DEBUG] list_view.py:221:refresh: refresh
+2017-11-17 06:12:43 - [DEBUG] odbc.py:35:queryData: SELECT sequenceNumber, Product_id, price FROM LineItem WHERE id = '1'
+2017-11-17 06:12:43 - [DEBUG] odbc.py:43:queryData: [{'price': 10000.0, 'Product_id': 1, 'sequenceNumber': 1}]
+2017-11-17 06:12:43 - [DEBUG] list_view.py:254:config_columns: ('sequenceNumber', 'Product_id', 'price')
+2017-11-17 06:12:43 - [DEBUG] list_view.py:257:config_columns: col_len: [14, 10, 7]
+2017-11-17 06:12:43 - [DEBUG] list_view.py:260:config_columns: new col_len: [532, 380, 266]
+2017-11-17 06:12:43 - [DEBUG] list_view.py:213:on_click: item_idx: 1, [2, 2, 1, 1, datetime.date(2017, 4, 28), datetime.datetime(2017, 4, 27, 9, 23, 55), datetime.datetime(2017, 4, 27, 9, 23, 55), 1.0, 'Advertisement', 1, 1]
+2017-11-17 06:12:43 - [DEBUG] list_view.py:216:on_click: calling self.click_cb
+2017-11-17 06:12:43 - [DEBUG] list_view.py:472:setValues: index: 1
+2017-11-17 06:12:43 - [DEBUG] list_view.py:221:refresh: refresh
+2017-11-17 06:12:43 - [DEBUG] odbc.py:35:queryData: SELECT sequenceNumber, Product_id, price FROM LineItem WHERE id = '2'
+2017-11-17 06:12:43 - [DEBUG] odbc.py:43:queryData: [{'price': 10000.0, 'Product_id': 1, 'sequenceNumber': 1}]
+2017-11-17 06:12:43 - [DEBUG] list_view.py:254:config_columns: ('sequenceNumber', 'Product_id', 'price')
+2017-11-17 06:12:43 - [DEBUG] list_view.py:257:config_columns: col_len: [14, 10, 7]
+2017-11-17 06:12:43 - [DEBUG] list_view.py:260:config_columns: new col_len: [532, 380, 266]
+2017-11-17 06:12:44 - [DEBUG] list_view.py:213:on_click: item_idx: 2, [3, 3, 1, 1, datetime.date(2017, 4, 28), datetime.datetime(2017, 4, 27, 9, 23, 55), datetime.datetime(2017, 4, 27, 9, 23, 55), 2.0, 'Advertisement', 1, 1]
+2017-11-17 06:12:44 - [DEBUG] list_view.py:216:on_click: calling self.click_cb
+2017-11-17 06:12:44 - [DEBUG] list_view.py:472:setValues: index: 2
+2017-11-17 06:12:44 - [DEBUG] list_view.py:221:refresh: refresh
+2017-11-17 06:12:44 - [DEBUG] odbc.py:35:queryData: SELECT sequenceNumber, Product_id, price FROM LineItem WHERE id = '3'
+2017-11-17 06:12:44 - [DEBUG] odbc.py:43:queryData: [{'price': 10000.0, 'Product_id': 1, 'sequenceNumber': 1}]
+2017-11-17 06:12:44 - [DEBUG] list_view.py:254:config_columns: ('sequenceNumber', 'Product_id', 'price')
+2017-11-17 06:12:44 - [DEBUG] list_view.py:257:config_columns: col_len: [14, 10, 7]
+2017-11-17 06:12:44 - [DEBUG] list_view.py:260:config_columns: new col_len: [532, 380, 266]
+2017-11-17 06:12:45 - [DEBUG] list_view.py:213:on_click: item_idx: 3, [4, 4, 1, 1, datetime.date(2017, 4, 28), datetime.datetime(2017, 4, 27, 9, 23, 55), datetime.datetime(2017, 4, 27, 9, 23, 55), 3.0, 'Advertisement', 1, 1]
+2017-11-17 06:12:45 - [DEBUG] list_view.py:216:on_click: calling self.click_cb
+2017-11-17 06:12:45 - [DEBUG] list_view.py:472:setValues: index: 3
+2017-11-17 06:12:45 - [DEBUG] list_view.py:221:refresh: refresh
+2017-11-17 06:12:45 - [DEBUG] odbc.py:35:queryData: SELECT sequenceNumber, Product_id, price FROM LineItem WHERE id = '4'
+2017-11-17 06:12:45 - [DEBUG] odbc.py:43:queryData: ()
+2017-11-17 06:12:45 - [DEBUG] list_view.py:254:config_columns: ('sequenceNumber', 'Product_id', 'price')
+2017-11-17 06:12:45 - [DEBUG] list_view.py:257:config_columns: col_len: [14, 10, 5]
+2017-11-17 06:12:45 - [DEBUG] list_view.py:260:config_columns: new col_len: [574, 410, 205]
+2017-11-17 06:12:47 - [DEBUG] list_view.py:213:on_click: item_idx: 0, [1, 1, 1, 1, datetime.date(2017, 4, 28), datetime.datetime(2017, 4, 27, 9, 23, 55), datetime.datetime(2017, 4, 27, 9, 23, 55), 0.0, 'Advertisement', 1, 1]
+2017-11-17 06:12:47 - [DEBUG] list_view.py:216:on_click: calling self.click_cb
+2017-11-17 06:12:47 - [DEBUG] list_view.py:472:setValues: index: 0
+2017-11-17 06:12:47 - [DEBUG] list_view.py:221:refresh: refresh
+2017-11-17 06:12:47 - [DEBUG] odbc.py:35:queryData: SELECT sequenceNumber, Product_id, price FROM LineItem WHERE id = '1'
+2017-11-17 06:12:47 - [DEBUG] odbc.py:43:queryData: [{'price': 10000.0, 'Product_id': 1, 'sequenceNumber': 1}]
+2017-11-17 06:12:47 - [DEBUG] list_view.py:254:config_columns: ('sequenceNumber', 'Product_id', 'price')
+2017-11-17 06:12:47 - [DEBUG] list_view.py:257:config_columns: col_len: [14, 10, 7]
+2017-11-17 06:12:47 - [DEBUG] list_view.py:260:config_columns: new col_len: [532, 380, 266]
+2017-11-17 06:12:49 - [DEBUG] list_view.py:213:on_click: item_idx: 1, [2, 2, 1, 1, datetime.date(2017, 4, 28), datetime.datetime(2017, 4, 27, 9, 23, 55), datetime.datetime(2017, 4, 27, 9, 23, 55), 1.0, 'Advertisement', 1, 1]
+2017-11-17 06:12:49 - [DEBUG] list_view.py:216:on_click: calling self.click_cb
+2017-11-17 06:12:49 - [DEBUG] list_view.py:472:setValues: index: 1
+2017-11-17 06:12:49 - [DEBUG] list_view.py:221:refresh: refresh
+2017-11-17 06:12:49 - [DEBUG] odbc.py:35:queryData: SELECT sequenceNumber, Product_id, price FROM LineItem WHERE id = '2'
+2017-11-17 06:12:49 - [DEBUG] odbc.py:43:queryData: [{'price': 10000.0, 'Product_id': 1, 'sequenceNumber': 1}]
+2017-11-17 06:12:49 - [DEBUG] list_view.py:254:config_columns: ('sequenceNumber', 'Product_id', 'price')
+2017-11-17 06:12:49 - [DEBUG] list_view.py:257:config_columns: col_len: [14, 10, 7]
+2017-11-17 06:12:49 - [DEBUG] list_view.py:260:config_columns: new col_len: [532, 380, 266]
+2017-11-17 06:12:51 - [DEBUG] list_view.py:213:on_click: item_idx: 0, [1, 1, 10000.0]
+2017-11-17 06:12:51 - [DEBUG] list_view.py:216:on_click: calling self.click_cb
+2017-11-17 06:12:51 - [DEBUG] list_view.py:472:setValues: index: 0
+2017-11-17 06:12:57 - [DEBUG] list_view.py:213:on_click: item_idx: 3, [4, 4, 1, 1, datetime.date(2017, 4, 28), datetime.datetime(2017, 4, 27, 9, 23, 55), datetime.datetime(2017, 4, 27, 9, 23, 55), 3.0, 'Advertisement', 1, 1]
+2017-11-17 06:12:57 - [DEBUG] list_view.py:216:on_click: calling self.click_cb
+2017-11-17 06:12:57 - [DEBUG] list_view.py:472:setValues: index: 3
+2017-11-17 06:12:57 - [DEBUG] list_view.py:221:refresh: refresh
+2017-11-17 06:12:57 - [DEBUG] odbc.py:35:queryData: SELECT sequenceNumber, Product_id, price FROM LineItem WHERE id = '4'
+2017-11-17 06:12:57 - [DEBUG] odbc.py:43:queryData: ()
+2017-11-17 06:12:57 - [DEBUG] list_view.py:254:config_columns: ('sequenceNumber', 'Product_id', 'price')
+2017-11-17 06:12:57 - [DEBUG] list_view.py:257:config_columns: col_len: [14, 10, 5]
+2017-11-17 06:12:57 - [DEBUG] list_view.py:260:config_columns: new col_len: [574, 410, 205]
+2017-11-17 06:12:58 - [DEBUG] list_view.py:213:on_click: item_idx: 0, [1, 1, 1, 1, datetime.date(2017, 4, 28), datetime.datetime(2017, 4, 27, 9, 23, 55), datetime.datetime(2017, 4, 27, 9, 23, 55), 0.0, 'Advertisement', 1, 1]
+2017-11-17 06:12:58 - [DEBUG] list_view.py:216:on_click: calling self.click_cb
+2017-11-17 06:12:58 - [DEBUG] list_view.py:472:setValues: index: 0
+2017-11-17 06:12:58 - [DEBUG] list_view.py:221:refresh: refresh
+2017-11-17 06:12:58 - [DEBUG] odbc.py:35:queryData: SELECT sequenceNumber, Product_id, price FROM LineItem WHERE id = '1'
+2017-11-17 06:12:58 - [DEBUG] odbc.py:43:queryData: [{'price': 10000.0, 'Product_id': 1, 'sequenceNumber': 1}]
+2017-11-17 06:12:58 - [DEBUG] list_view.py:254:config_columns: ('sequenceNumber', 'Product_id', 'price')
+2017-11-17 06:12:58 - [DEBUG] list_view.py:257:config_columns: col_len: [14, 10, 7]
+2017-11-17 06:12:58 - [DEBUG] list_view.py:260:config_columns: new col_len: [532, 380, 266]

@@ -27,7 +27,7 @@ def getConnection():
 #    return db.cursor
 
 #display data
-def queryData(table, columns="*", condition="", join=""):
+def queryData(table, columns="*", condition="", join="", errmsg=None):
     sql = "SELECT "  + columns \
                 + " FROM " + table \
                 + ("" if join == "" else (" INNER JOIN " + join)) \
@@ -43,11 +43,15 @@ def queryData(table, columns="*", condition="", join=""):
             debug(rows_dict)
             return (cols, [[row[col] for col in cols] for row in rows_dict])
     except Exception as e:
-        error("MYSQLError: errno %r, %r", e.args[0], e)
+        msg ="MYSQLError: errno %r, %r" % (e.args[0], e)
+        if errmsg is not None:
+            errmsg.append(msg)
+        error(msg)
     finally:
         conn.close()
+    return ([], [])
 
-def insertData(table, columns="", values=""):
+def insertData(table, columns="", values="", errmsg=None):
     """insert data into database"""
     columns = ("" if columns == "" else(" ( " + columns + ") " ))
     sql = ("INSERT INTO " + table + " " + columns + " VALUE ( " + values + " ) ") 
@@ -63,11 +67,14 @@ def insertData(table, columns="", values=""):
             return cursor.lastrowid
     
     except Exception as e:
-        error("MYSQLError: errno %r, %r", e.args[0], e)
+        msg ="MYSQLError: errno %r, %r" % (e.args[0], e)
+        if errmsg is not None:
+            errmsg.append(msg)
+        error(msg)
     finally:
         conn.close()   
 
-def updateData(table, column_and_value="", condition=""):
+def updateData(table, column_and_value="", condition="", errmsg=None):
     """update data into database"""
     sql = ("UPDATE " + table + " SET " + column_and_value + ("" if condition == "" else(" WHERE " + condition)))
     debug(sql)
@@ -80,11 +87,14 @@ def updateData(table, column_and_value="", condition=""):
             conn.commit()
             return cursor.rowcount
     except Exception as e:
-        error("MYSQLError: errno %r, %r", e.args[0], e)
+        msg ="MYSQLError: errno %r, %r" % (e.args[0], e)
+        if errmsg is not None:
+            errmsg.append(msg)
+        error(msg)
     finally:
         conn.close()
 
-def deleteData(table, condition=""):
+def deleteData(table, condition="", errmsg=None):
     """delete data from database"""
     sql = ("DELETE FROM " + table + ("" if condition == "" else(" WHERE " + condition)))
     debug(sql)
@@ -96,7 +106,10 @@ def deleteData(table, condition=""):
             conn.commit()
             return cursor.rowcount
     except Exception as e:
-        error("MYSQLError: errno %r, %r", e.args[0], e)
+        msg ="MYSQLError: errno %r, %r" % (e.args[0], e)
+        if errmsg is not None:
+            errmsg.append(msg)
+        error(msg)
     finally:
         conn.close()
     

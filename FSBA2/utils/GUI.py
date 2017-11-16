@@ -34,6 +34,7 @@ class GUI(tk.Frame):
         info("initializing new GUI window")
         debug(debug_outer_stack_frame()) # debug: dump caller's info
 
+        self.displayed_username = '' 
         self.mode = GUIMode(mode)
 
         if login == True:
@@ -122,36 +123,34 @@ class GUI(tk.Frame):
         """
         self.maximize()
         self.logobar = self.LogoBar(self.root, self.app_name, self.displayed_username)
-        self.notebook = ttk.Notebook(self.root, padding=(0,0,0,0))
-        self.notebook.pack(fill="both", expand=True)
+        self.notebook = ttk.Notebook(self.root)#, padding=(0,0,0,0))
 
-        self.notebook.update()
-        width = self.notebook.winfo_width()
-        height = self.notebook.winfo_height()
-        debug("width: %d, height: %d" % (width, height))
+        # be careful this is to delay the pack() and DO NOT call any update before pack()
+        # otherwise grid() and pack() will bargain with each other for optimal solution 
+        # and the program will hang until they're done
+        self.notebook.grid(row=1, column=0, sticky="nsew")
 
         self.tabs = {}
 
+        frame_w = scalei(self.width, 0.9)
+        debug("frame_w: %r", frame_w)
         for tab_name, tab_data in self.tab_dict.items():
-            self.tabs[tab_name] = ttk.Frame(self.notebook)
-            self.tabs[tab_name].pack(fill="both", expand=True)
-            self.tabs[tab_name].update()
-            frameW = self.tabs[tab_name].winfo_width()
-            frameH = self.tabs[tab_name].winfo_height()
-            debug("Frame: width: %d, height: %d" % (frameW, frameH))
-
-            self.notebook.add(self.tabs[tab_name], text=tab_name, sticky="nesw")
+            self.tabs[tab_name] = ttk.Frame(self.notebook, width=frame_w)
+            self.tabs[tab_name].pack()
+            self.notebook.add(self.tabs[tab_name], text=tab_name)#, sticky="nesw")
             if tab_data['table'] != "":
-                ListView(self.tabs[tab_name], width, height, **tab_data).pack()
-                
-            report_output()
+                ListView(self.tabs[tab_name], frame_w, self.height, 50, **tab_data).pack(expand=False)
+            else:
+                report_output(self.tabs[tab_name])
             
         debug("self.tabs: %r", self.tabs)
+        self.notebook.pack(fill="both", expand=True)
 
     def maximize(self):
         """maximize window"""
         root = self.root
         w, h = root.winfo_screenwidth(), root.winfo_screenheight()
+        self.width, self.height = w, h
         root.geometry("%dx%d+0+0" % (w, h))
 
         root.grid_rowconfigure(1, weight=1)
@@ -183,14 +182,10 @@ class GUI(tk.Frame):
             self.width = width
             self.height = int(root.winfo_height() * 0.075)
             tk.Frame.__init__(self, root, height=self.height)
-            #canvas = self.GradientCanvas(self, (68,68,68), (32,32,32), self.height)
             cfg_filename = os.path.dirname(os.path.abspath(__file__)) + '/../color_config.ini'
             info(cfg_filename)
             config = config_dict(cfg_filename)
-            #grad_name = 'scooter_h'
             grad_name = 'purple_paradise'
-            #grad_name = 'visions_of_grandeur_h'
-            #grad_name = 'FSBA'
             colors = list(hex2tuple(config[grad_name]['color%d' % (i + 1)]) for i in range(2))
             info(colors)
             canvas = self.GradientCanvas(self, *colors, self.height, horizontal=(config[grad_name]['mode'] == 'h'))
