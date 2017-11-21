@@ -3,6 +3,7 @@ import csv
 from collections import OrderedDict
 from tkinter import *
 from tkinter.ttk import *
+from PIL import ImageTk, Image
 from .debug import *
 from .odbc import *
 
@@ -32,8 +33,15 @@ class report_output(Frame):
             
 
     def getDict(self):
-        rs = queryData("SalesOrder")
+        rs = queryData("SalesOrder as o",\
+                        """
+                        o.id as sales_id, o.Customer_id, o.PrintStatus_id, o.OrderStatus_id, o.date, o.date_created, o.last_updated, o.price, o.source, o.PaymentMethod_id,
+                        l.Product_id, p.name, p.Category, l.sequenceNumber, l.price as 'product_price', 
+                        o.created_by, e.emailAddr, e.firstName, e.lastName, e.role, e.status""",
+                        join="LineItem as l on l.Sales_id = o.id INNER JOIN Product as p ON p.id = l.Product_id INNER JOIN Staff as e on o.created_by = e.id")
         cols, rows = rs
+        debug(cols)
+        debug(rows)
         out_dict_list = list(OrderedDict(zip(cols, r)) for r in rows)
         debug(out_dict_list)
         return (cols, out_dict_list)

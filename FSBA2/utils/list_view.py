@@ -53,9 +53,9 @@ class ListView(Frame):
         if kwargs['table'] == 'SalesOrder':
             debug("if kwargs['table'] == 'SalesOrder':")
             self.tbl2 = self.Table(self, width, height // 3, True, table="LineItem", columns="sequenceNumber, Product_id, price", condition="0")
-            self.tbl2.pack()
+            self.tbl2.pack(fill=X)
             self.edit_pane2 = self.Fields(self, width, padx, table="LineItem", columns="sequenceNumber, Product_id, price")
-            self.edit_pane2.pack()
+            #self.edit_pane2.pack()
             self.tbl2.set_click_cb(self.edit_pane2.setValues)
             self.tbl.set_click_cb(self.update_table_special)
 
@@ -141,7 +141,7 @@ class ListView(Frame):
             if self.special and self.special_idx != -1:        
                 if 'condition' in self.kwargs:
                     del self.kwargs['condition']
-                result_set = queryData(condition="id = '%d'" % self.special_idx, **self.kwargs)
+                result_set = queryData(condition="sales_id = '%d'" % self.special_idx, **self.kwargs)
             else:
                 result_set = queryData(**self.kwargs)
             if result_set == ([], []):

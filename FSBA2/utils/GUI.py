@@ -74,34 +74,50 @@ class GUI(tk.Frame):
         # override the "X" button to directly terminate the program in login mode
         self.root.protocol('WM_DELETE_WINDOW', self.terminate)
 
+        #---------------------------------
+        self.root.geometry('1280x720')
+        imgPath = r"LoginDialog.jpg"
+        self.bgImg = ImageTk.PhotoImage(file=imgPath)
+        bglbl = Label(image = self.bgImg)
+        bglbl.image = self.bgImg
+        bglbl.place(x=0)
+        #---------------------------------
+
         # center the window
         self.centerWindow()
+
 
         # declaring lists, for convenience on looping
         fields = []
         self.login_txtVar = [tk.StringVar() for i in range(2)] # [self.usernamesvalue, self.passwordsvalue]
-        login_lbls = ["Username", "Password"]
+        #login_lbls = ["Username", "Password"]
 
         for i in range(2):
-            # Text display
-            tk.Label(self.root, 
-                     text=login_lbls[i]).grid(row=i*2, column=0,\
-                          columnspan=1, sticky='w')
+        #    # Text display
+        #    tk.Label(self.root, 
+        #             text=login_lbls[i]) \
+        #                     .place(
+                          #grid(row=i*2, column=0,\
+                          #columnspan=1, sticky='w')
 
             # text field for user-input, appending the new field into list fields for easier reference
             fields.append(tk.Entry(self.root, \
                                    textvariable=self.login_txtVar[i],\
                                    show="*" if i else ""))
-            fields[-1].grid(row=i*2+1, column=0, sticky='w')
+            #TODO fields[-1].grid(row=i*2+1, column=0, sticky='w')
+            fields[-1].place(x=540, y=370 + i *75, height=40, width=200)
 
         # declare two buttons
-        for (txt, (f, sticky)) in {"Login": (self.checkLogin, 'w'), "Cancel": (self.terminate, 'e')}.items():
-            tk.Button(self.root, 
-                      text=txt, command=f)\
-                    .grid(row=4, column=0, sticky=sticky)
+        #for (txt, (f, sticky)) in {"Login": (self.checkLogin, 'w'), "Cancel": (self.terminate, 'e')}.items():
+        #    tk.Button(self.root, 
+        #              text=txt, command=f)\
+        #            .grid(row=4, column=0, sticky=sticky)
+        self.root.bind('<Return>', self.checkLogin)
 
 
-    def checkLogin(self):
+    #def checkLogin(self):
+    def checkLogin(self, *argv):
+
         """Check whether the combination of username and input is valid for login"""
         #user = self.usernamesvalue.get()
         #pw = self.passwordsvalue.get()
