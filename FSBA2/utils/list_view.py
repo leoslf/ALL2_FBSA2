@@ -60,6 +60,11 @@ class ListView(Frame):
             self.tbl.set_click_cb(self.update_table_special)
 
     def update_table_special(self, idx):
+        """
+        event handler of sales order tab's table
+        extends the original functionalities
+        and add update on the table down there
+        """
         self.edit_pane.setValues(idx)
         self.tbl2.special_set_idx(idx)
 
@@ -138,6 +143,9 @@ class ListView(Frame):
             # self.init_rows()
 
         def tmp(self):
+            """
+            special table querying for sales order tab
+            """
             if self.special and self.special_idx != -1:        
                 if 'condition' in self.kwargs:
                     del self.kwargs['condition']
@@ -450,6 +458,9 @@ class ListView(Frame):
             self.tbl_handle.refresh()
 
         def col_and_val(self):
+            """
+            return the tuple of column and values modified by their column indices
+            """
             columns = [self.cols[i] for i in self.modified_idx]
             debug(columns)
             values = [self.entries_sv[i].get() for i in self.modified_idx]
@@ -469,6 +480,9 @@ class ListView(Frame):
 
 
         def setValues(self, idx):
+            """
+            call back for the table to update the fields on selection
+            """
             debug("index: %d", idx)
             self.btns['Delete']['state'] = 'normal'
             self.clear()
