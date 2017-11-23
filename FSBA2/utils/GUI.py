@@ -32,7 +32,7 @@ class GUI(tk.Frame):
         """
         
         info("initializing new GUI window")
-        debug(debug_outer_stack_frame()) # debug: dump caller's info
+        #TODO debug(debug_outer_stack_frame()) # debug: dump caller's info
 
         self.displayed_username = '' 
         self.mode = GUIMode(mode)
@@ -157,6 +157,7 @@ class GUI(tk.Frame):
             if tab_data['table'] != "":
                 ListView(self.tabs[tab_name], frame_w, self.height, 50, **tab_data).pack(expand=False)
             else:
+                # TODO make this specific to report output
                 report_output(self.tabs[tab_name])
             
         debug("self.tabs: %r", self.tabs)
